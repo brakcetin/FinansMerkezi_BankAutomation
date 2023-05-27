@@ -117,11 +117,11 @@
       <DependentUpon>changePass.cs</DependentUpon>
     </Compile>
     <Compile Include="DataBaseHelper.cs" />
-    <Compile Include="debit.cs">
+    <Compile Include="creditForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="debit.Designer.cs">
-      <DependentUpon>debit.cs</DependentUpon>
+    <Compile Include="creditForm.Designer.cs">
+      <DependentUpon>creditForm.cs</DependentUpon>
     </Compile>
     <Compile Include="exitForm.cs">
       <SubType>Form</SubType>
@@ -135,6 +135,7 @@
     <Compile Include="fdForm.Designer.cs">
       <DependentUpon>fdForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Informations.cs" />
     <Compile Include="logoutForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,17 +174,20 @@
     <Compile Include="viewFD.Designer.cs">
       <DependentUpon>viewFD.cs</DependentUpon>
     </Compile>
-    <Compile Include="withdraw.cs">
+    <Compile Include="debitForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="withdraw.Designer.cs">
-      <DependentUpon>withdraw.cs</DependentUpon>
+    <Compile Include="debitForm.Designer.cs">
+      <DependentUpon>debitForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="admin_login.resx">
       <DependentUpon>admin_login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="allUsers.resx">
       <DependentUpon>allUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="creditForm.resx">
+      <DependentUpon>creditForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>

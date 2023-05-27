@@ -34,7 +34,7 @@
             this.kullanıcıEkleGüncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tümHesaplarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.işlemlerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.borçlarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mevduatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.paraÇekmekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transferİşlemleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vadeliMevduatFormuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,7 +69,7 @@
             this.kullanıcıEkleGüncelleToolStripMenuItem,
             this.tümHesaplarToolStripMenuItem});
             this.newAccountToolStripMenuItem.Name = "newAccountToolStripMenuItem";
-            this.newAccountToolStripMenuItem.Size = new System.Drawing.Size(125, 26);
+            this.newAccountToolStripMenuItem.Size = new System.Drawing.Size(125, 24);
             this.newAccountToolStripMenuItem.Text = "Hesap İşlemleri";
             // 
             // yeniHesapEkleToolStripMenuItem
@@ -96,20 +96,20 @@
             // işlemlerToolStripMenuItem
             // 
             this.işlemlerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.borçlarToolStripMenuItem,
+            this.mevduatToolStripMenuItem,
             this.paraÇekmekToolStripMenuItem,
             this.transferİşlemleriToolStripMenuItem,
             this.vadeliMevduatFormuToolStripMenuItem});
             this.işlemlerToolStripMenuItem.Name = "işlemlerToolStripMenuItem";
-            this.işlemlerToolStripMenuItem.Size = new System.Drawing.Size(75, 26);
+            this.işlemlerToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
             this.işlemlerToolStripMenuItem.Text = "İşlemler";
             // 
-            // borçlarToolStripMenuItem
+            // mevduatToolStripMenuItem
             // 
-            this.borçlarToolStripMenuItem.Name = "borçlarToolStripMenuItem";
-            this.borçlarToolStripMenuItem.Size = new System.Drawing.Size(241, 26);
-            this.borçlarToolStripMenuItem.Text = "Borçlar";
-            this.borçlarToolStripMenuItem.Click += new System.EventHandler(this.borçlarToolStripMenuItem_Click);
+            this.mevduatToolStripMenuItem.Name = "mevduatToolStripMenuItem";
+            this.mevduatToolStripMenuItem.Size = new System.Drawing.Size(241, 26);
+            this.mevduatToolStripMenuItem.Text = "Mevduatlar";
+            this.mevduatToolStripMenuItem.Click += new System.EventHandler(this.mevduatToolStripMenuItem_Click);
             // 
             // paraÇekmekToolStripMenuItem
             // 
@@ -138,7 +138,7 @@
             this.bilançoToolStripMenuItem,
             this.vadeliMevduatGötürüToolStripMenuItem});
             this.görüntüleToolStripMenuItem.Name = "görüntüleToolStripMenuItem";
-            this.görüntüleToolStripMenuItem.Size = new System.Drawing.Size(88, 26);
+            this.görüntüleToolStripMenuItem.Size = new System.Drawing.Size(88, 24);
             this.görüntüleToolStripMenuItem.Text = "Görüntüle";
             // 
             // bilançoToolStripMenuItem
@@ -162,7 +162,7 @@
             this.şifreDeğiştirToolStripMenuItem,
             this.çıkışToolStripMenuItem});
             this.diğerToolStripMenuItem.Name = "diğerToolStripMenuItem";
-            this.diğerToolStripMenuItem.Size = new System.Drawing.Size(60, 26);
+            this.diğerToolStripMenuItem.Size = new System.Drawing.Size(60, 24);
             this.diğerToolStripMenuItem.Text = "Diğer";
             // 
             // çıkışYapToolStripMenuItem
@@ -212,7 +212,7 @@
         private System.Windows.Forms.ToolStripMenuItem kullanıcıEkleGüncelleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tümHesaplarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem işlemlerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem borçlarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mevduatToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem paraÇekmekToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem transferİşlemleriToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vadeliMevduatFormuToolStripMenuItem;

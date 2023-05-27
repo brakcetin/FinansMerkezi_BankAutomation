@@ -23,9 +23,6 @@ namespace FinansMerkezi
         string gender = string.Empty;
         string m_stat = string.Empty;
         string name = string.Empty;
-        string motherName = string.Empty;
-        string fatherName = string.Empty;
-        string balanceText = string.Empty;
         DateTime dateOfBirth = DateTime.MinValue;
         string phoneno = string.Empty;
         string address = string.Empty;
@@ -142,9 +139,6 @@ namespace FinansMerkezi
 
                                 // Bilgileri doldurma
                                 name = reader["Name"].ToString();
-                                motherName = reader["Mother_Name"].ToString();
-                                fatherName = reader["Father_Name"].ToString();
-                                balanceText = reader["Balance"].ToString();
                                 dateOfBirth = reader.GetDateTime("DateofBirth");
                                 phoneno = reader["PhoneNo"].ToString();
                                 address = reader["Adress"].ToString();
@@ -200,9 +194,6 @@ namespace FinansMerkezi
                                 // Diğer kontrolleri doldurma işlemleri
                                 accnoTxt.Text = accountNo;
                                 nameTxt.Text = name;
-                                momTxt.Text = motherName;
-                                dadTxt.Text = fatherName;
-                                blncTxt.Text = balanceText.ToString();
                                 dateTimePicker1.Value = dateOfBirth;
                                 phoneTxt.Text = phoneno;
                                 addressTxt.Text = address;
@@ -251,10 +242,7 @@ namespace FinansMerkezi
         {
             string newaccountNo = accnoTxt.Text;
             name = nameTxt.Text;
-            motherName = momTxt.Text;
-            balanceText = blncTxt.Text;
             dateOfBirth = dateTimePicker1.Value.Date;
-            fatherName = dadTxt.Text;
             phoneno = phoneTxt.Text;
             address = addressTxt.Text;
             district = distTxt.Text;
@@ -281,12 +269,13 @@ namespace FinansMerkezi
             {
                 m_stat = "Bekar";
             }
+
+            //alanlar boş bırakıldığı durumda hata verir
             if (string.IsNullOrEmpty(name) || dateOfBirth == DateTime.MinValue.Date || string.IsNullOrEmpty(phoneno) ||
     string.IsNullOrEmpty(address) || string.IsNullOrEmpty(district) || comboBox1.SelectedItem == null ||
-    profile == null || string.IsNullOrEmpty(motherName) || string.IsNullOrEmpty(fatherName) ||
-    string.IsNullOrEmpty(balanceText) || string.IsNullOrEmpty(gender) || string.IsNullOrEmpty(m_stat))
+    profile == null || string.IsNullOrEmpty(gender) || string.IsNullOrEmpty(m_stat))
             {
-                MessageBox.Show("Alanlar boş bırakılamaz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Alanlar boş bırakılamaz", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             else
@@ -306,19 +295,10 @@ namespace FinansMerkezi
                     return;
                 }
 
-                if (!decimal.TryParse(balanceText, out decimal balance))
-                {
-                    MessageBox.Show("Lütfen geçerli bir bakiye girin.");
-                    blncTxt.Focus(); // Metin kutusuna odaklanma
-                    blncTxt.SelectAll(); // Tüm metni seçme
-                    return; // İşlemi sonlandırma
-                }
-
 
                 // Veritabanında güncelleme işlemini gerçekleştirin
                 string query = "UPDATE useraccount SET Name = @name,DateofBirth = @dateOfBirth, PhoneNo=@PhoneNo," +
-                    "Adress=@Adress, District=@District, State=@State, Profile=@Profile, Gender=@Gender, Marriage_Status=@Marriage_Status," +
-                    "Mother_Name = @Mother_Name, Father_Name=@Father_Name, Balance = @Balance  WHERE Account_No = @accountNo";
+                    "Adress=@Adress, District=@District, State=@State, Profile=@Profile, Gender=@Gender, Marriage_Status=@Marriage_Status WHERE Account_No = @accountNo";
                 using (MySqlConnection connection = DataBaseHelper.GetConnection())
                 {
                     if (connection.State != ConnectionState.Open)
@@ -338,9 +318,6 @@ namespace FinansMerkezi
                         command.Parameters.AddWithValue("@Profile", profile);
                         command.Parameters.AddWithValue("@Gender", gender);
                         command.Parameters.AddWithValue("@Marriage_Status", m_stat);
-                        command.Parameters.AddWithValue("@Mother_Name", motherName);
-                        command.Parameters.AddWithValue("@Father_Name", fatherName);
-                        command.Parameters.AddWithValue("@Balance", balanceText);
 
                         int rowsAffected = command.ExecuteNonQuery();
 
@@ -389,9 +366,6 @@ namespace FinansMerkezi
             pictureBox1.Image = null;
             gender = string.Empty;
             m_stat = string.Empty;
-            momTxt.Text = string.Empty;
-            dadTxt.Text = string.Empty;
-            blncTxt.Text = string.Empty;
         }
 
         private void delBtn_Click(object sender, EventArgs e)

@@ -34,9 +34,6 @@
             this.addressTxt = new System.Windows.Forms.TextBox();
             this.distTxt = new System.Windows.Forms.TextBox();
             this.phoneTxt = new System.Windows.Forms.TextBox();
-            this.dadTxt = new System.Windows.Forms.TextBox();
-            this.blncTxt = new System.Windows.Forms.TextBox();
-            this.momTxt = new System.Windows.Forms.TextBox();
             this.save_btn = new System.Windows.Forms.Button();
             this.imgBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -47,9 +44,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.umarriedRadio = new System.Windows.Forms.RadioButton();
             this.marriedRadio = new System.Windows.Forms.RadioButton();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -112,27 +106,6 @@
             this.phoneTxt.Name = "phoneTxt";
             this.phoneTxt.Size = new System.Drawing.Size(254, 22);
             this.phoneTxt.TabIndex = 50;
-            // 
-            // dadTxt
-            // 
-            this.dadTxt.Location = new System.Drawing.Point(699, 456);
-            this.dadTxt.Name = "dadTxt";
-            this.dadTxt.Size = new System.Drawing.Size(150, 22);
-            this.dadTxt.TabIndex = 59;
-            // 
-            // blncTxt
-            // 
-            this.blncTxt.Location = new System.Drawing.Point(699, 500);
-            this.blncTxt.Name = "blncTxt";
-            this.blncTxt.Size = new System.Drawing.Size(150, 22);
-            this.blncTxt.TabIndex = 58;
-            // 
-            // momTxt
-            // 
-            this.momTxt.Location = new System.Drawing.Point(699, 412);
-            this.momTxt.Name = "momTxt";
-            this.momTxt.Size = new System.Drawing.Size(150, 22);
-            this.momTxt.TabIndex = 57;
             // 
             // save_btn
             // 
@@ -235,33 +208,6 @@
             this.marriedRadio.TabIndex = 0;
             this.marriedRadio.Text = "Evli";
             this.marriedRadio.UseVisualStyleBackColor = true;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(609, 462);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(63, 16);
-            this.label11.TabIndex = 44;
-            this.label11.Text = "Baba Adı";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(609, 506);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(49, 16);
-            this.label12.TabIndex = 43;
-            this.label12.Text = "Bakiye";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(609, 418);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(61, 16);
-            this.label13.TabIndex = 42;
-            this.label13.Text = "Anne Adı";
             // 
             // label10
             // 
@@ -401,17 +347,11 @@
             this.Controls.Add(this.addressTxt);
             this.Controls.Add(this.distTxt);
             this.Controls.Add(this.phoneTxt);
-            this.Controls.Add(this.dadTxt);
-            this.Controls.Add(this.blncTxt);
-            this.Controls.Add(this.momTxt);
             this.Controls.Add(this.save_btn);
             this.Controls.Add(this.imgBtn);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label13);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -442,9 +382,6 @@
         private System.Windows.Forms.TextBox addressTxt;
         private System.Windows.Forms.TextBox distTxt;
         private System.Windows.Forms.TextBox phoneTxt;
-        private System.Windows.Forms.TextBox dadTxt;
-        private System.Windows.Forms.TextBox blncTxt;
-        private System.Windows.Forms.TextBox momTxt;
         private System.Windows.Forms.Button save_btn;
         private System.Windows.Forms.Button imgBtn;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -455,9 +392,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton umarriedRadio;
         private System.Windows.Forms.RadioButton marriedRadio;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;

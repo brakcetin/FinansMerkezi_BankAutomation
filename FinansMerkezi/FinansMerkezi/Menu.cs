@@ -38,18 +38,18 @@ namespace FinansMerkezi
             allus.Show();
         }
 
-        private void borçlarToolStripMenuItem_Click(object sender, EventArgs e)
+        private void mevduatToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            debit deb = new debit();
-            deb.MdiParent = this;
-            deb.Show();
+            creditForm crdfrm = new creditForm();
+            crdfrm.MdiParent = this;
+            crdfrm.Show();
         }
 
         private void paraÇekmekToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            withdraw wd = new withdraw();
-            wd.MdiParent = this;
-            wd.Show();
+            debitForm dpf = new debitForm();
+            dpf.MdiParent = this;
+            dpf.Show();
         }
 
         private void transferİşlemleriToolStripMenuItem_Click(object sender, EventArgs e)

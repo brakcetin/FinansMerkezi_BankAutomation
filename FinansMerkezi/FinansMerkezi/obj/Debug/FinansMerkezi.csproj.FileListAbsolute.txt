@@ -43,3 +43,4 @@ C:\Users\brakc\source\repos\Project\FinansMerkezi\FinansMerkezi\bin\Debug\System
 C:\Users\brakc\source\repos\Project\FinansMerkezi\FinansMerkezi\bin\Debug\MySqlConnector.xml
 C:\Users\brakc\source\repos\Project\FinansMerkezi\FinansMerkezi\bin\Debug\System.Diagnostics.DiagnosticSource.xml
 C:\Users\brakc\source\repos\Project\FinansMerkezi\FinansMerkezi\obj\Debug\FinansMerkezi.allUsers.resources
+C:\Users\brakc\source\repos\Project\FinansMerkezi\FinansMerkezi\obj\Debug\FinansMerkezi.creditForm.resources
