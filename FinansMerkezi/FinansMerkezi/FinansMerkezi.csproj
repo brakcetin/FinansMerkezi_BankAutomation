@@ -189,6 +189,9 @@
     <EmbeddedResource Include="creditForm.resx">
       <DependentUpon>creditForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="debitForm.resx">
+      <DependentUpon>debitForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
@@ -204,6 +207,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="transferForm.resx">
+      <DependentUpon>transferForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="updateForm.resx">
       <DependentUpon>updateForm.cs</DependentUpon>
     </EmbeddedResource>

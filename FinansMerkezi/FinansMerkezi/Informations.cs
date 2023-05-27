@@ -8,11 +8,11 @@ namespace FinansMerkezi
 {
     internal class Informations
     {
-        private string accountNo;
+        private decimal accountNo;
         private string name;
         private decimal balance;
 
-        public string AccountNo
+        public decimal AccountNo
         {
             get { return accountNo; }
             set { accountNo = value; }

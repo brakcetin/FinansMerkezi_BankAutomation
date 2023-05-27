@@ -96,18 +96,18 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(45, 331);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(111, 16);
+            this.label6.Size = new System.Drawing.Size(114, 16);
             this.label6.TabIndex = 5;
-            this.label6.Text = "Mevduat Yöntemi";
+            this.label6.Text = "Mevduat Yöntemi:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(45, 396);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(101, 16);
+            this.label7.Size = new System.Drawing.Size(104, 16);
             this.label7.TabIndex = 6;
-            this.label7.Text = "Mevduat Miktarı";
+            this.label7.Text = "Mevduat Miktarı:";
             // 
             // accnoTxt
             // 
@@ -118,15 +118,19 @@
             // 
             // nameTxt
             // 
+            this.nameTxt.Enabled = false;
             this.nameTxt.Location = new System.Drawing.Point(192, 195);
             this.nameTxt.Name = "nameTxt";
+            this.nameTxt.ReadOnly = true;
             this.nameTxt.Size = new System.Drawing.Size(263, 22);
             this.nameTxt.TabIndex = 8;
             // 
             // oldblncTxt
             // 
+            this.oldblncTxt.Enabled = false;
             this.oldblncTxt.Location = new System.Drawing.Point(192, 263);
             this.oldblncTxt.Name = "oldblncTxt";
+            this.oldblncTxt.ReadOnly = true;
             this.oldblncTxt.Size = new System.Drawing.Size(263, 22);
             this.oldblncTxt.TabIndex = 9;
             // 
@@ -169,6 +173,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(895, 564);
             this.Controls.Add(this.updateBtn);
             this.Controls.Add(this.detailsBtn);

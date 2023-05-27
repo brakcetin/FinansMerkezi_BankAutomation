@@ -44,3 +44,5 @@ C:\Users\brakc\source\repos\Project\FinansMerkezi\FinansMerkezi\bin\Debug\MySqlC
 C:\Users\brakc\source\repos\Project\FinansMerkezi\FinansMerkezi\bin\Debug\System.Diagnostics.DiagnosticSource.xml
 C:\Users\brakc\source\repos\Project\FinansMerkezi\FinansMerkezi\obj\Debug\FinansMerkezi.allUsers.resources
 C:\Users\brakc\source\repos\Project\FinansMerkezi\FinansMerkezi\obj\Debug\FinansMerkezi.creditForm.resources
+C:\Users\brakc\source\repos\Project\FinansMerkezi\FinansMerkezi\obj\Debug\FinansMerkezi.debitForm.resources
+C:\Users\brakc\source\repos\Project\FinansMerkezi\FinansMerkezi\obj\Debug\FinansMerkezi.transferForm.resources

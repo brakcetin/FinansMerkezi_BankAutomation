@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using MySql.Data.MySqlClient;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace FinansMerkezi
 {
@@ -46,7 +45,7 @@ namespace FinansMerkezi
                     connection.Open();
                 }
 
-                infos.AccountNo = accnoTxt.Text;
+                infos.AccountNo = Convert.ToDecimal(accnoTxt.Text);
                 //Hesap numarasını kullanarak bakiye ve ad-soyad bilgilerini sorgular ve ilgili TextBox'lara yazdırır
                 string query = "SELECT Name, Balance FROM useraccount WHERE Account_No = @accountNo";
                 using (MySqlCommand command = new MySqlCommand(query, connection))
@@ -81,26 +80,23 @@ namespace FinansMerkezi
 
         private void updateBtn_Click(object sender, EventArgs e)
         {
-            string new_accno = accnoTxt.Text;
-            decimal new_oldbalance;
+            decimal new_accno;
             string mode = modecomboBox.Text;
             decimal depamount;
             string date = label2.Text;
-            string new_name = nameTxt.Text;
 
             //alanlar boş bırakıldığı durumda hata verir
+            if (!decimal.TryParse(accnoTxt.Text, out new_accno))
+            {
+                MessageBox.Show("Alanlar boş bırakılamaz!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (!decimal.TryParse(damountTxt.Text, out depamount))
             {
                 MessageBox.Show("Alanlar boş bırakılamaz!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (!decimal.TryParse(oldblncTxt.Text, out new_oldbalance))
-            {
-                MessageBox.Show("Alanlar boş bırakılamaz!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            if (string.IsNullOrEmpty(new_accno) || string.IsNullOrEmpty(new_accno) ||
-                modecomboBox.SelectedItem == null || string.IsNullOrEmpty(date) || string.IsNullOrEmpty(new_name))
+            if (modecomboBox.SelectedItem == null || string.IsNullOrEmpty(date))
             {
                 MessageBox.Show("Alanlar boş bırakılamaz!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -110,16 +106,6 @@ namespace FinansMerkezi
                 if (infos.AccountNo != new_accno)
                 {
                     MessageBox.Show("Hesap numarası değiştirilemez.", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return; // Hata durumunda işlemi sonlandırır
-                }
-                if (infos.Name != new_name)
-                {
-                    MessageBox.Show("Ad-Soyad bilgileri değiştirilemez.", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return; // Hata durumunda işlemi sonlandırır
-                }
-                if (infos.Balance != new_oldbalance)
-                {
-                    MessageBox.Show("Önceki bakiye değiştirilemez.", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return; // Hata durumunda işlemi sonlandırır
                 }
                 
@@ -134,8 +120,8 @@ namespace FinansMerkezi
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@accountNo", new_accno);
-                        command.Parameters.AddWithValue("@Name", new_name);
-                        command.Parameters.AddWithValue("@OldBalance", new_oldbalance);
+                        command.Parameters.AddWithValue("@Name", infos.Name);
+                        command.Parameters.AddWithValue("@OldBalance", infos.Balance);
                         command.Parameters.AddWithValue("@mode", mode);
                         command.Parameters.AddWithValue("@dipamount", depamount);
                         command.Parameters.AddWithValue("@date", date);
@@ -155,7 +141,7 @@ namespace FinansMerkezi
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("Sorgu Hatası: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Sorgu Hatası: " + ex.Message, "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
 

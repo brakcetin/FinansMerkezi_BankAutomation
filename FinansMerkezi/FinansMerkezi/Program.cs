@@ -16,7 +16,7 @@ namespace FinansMerkezi
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new admin_login());
+            Application.Run(new transferForm());
         }
     }
 }
