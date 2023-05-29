@@ -46,3 +46,4 @@ C:\Users\brakc\source\repos\Project\FinansMerkezi\FinansMerkezi\obj\Debug\Finans
 C:\Users\brakc\source\repos\Project\FinansMerkezi\FinansMerkezi\obj\Debug\FinansMerkezi.creditForm.resources
 C:\Users\brakc\source\repos\Project\FinansMerkezi\FinansMerkezi\obj\Debug\FinansMerkezi.debitForm.resources
 C:\Users\brakc\source\repos\Project\FinansMerkezi\FinansMerkezi\obj\Debug\FinansMerkezi.transferForm.resources
+C:\Users\brakc\source\repos\Project\FinansMerkezi\FinansMerkezi\obj\Debug\FinansMerkezi.fdForm.resources

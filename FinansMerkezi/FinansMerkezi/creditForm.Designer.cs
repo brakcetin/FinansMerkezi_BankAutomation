@@ -96,18 +96,18 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(45, 331);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(114, 16);
+            this.label6.Size = new System.Drawing.Size(103, 16);
             this.label6.TabIndex = 5;
-            this.label6.Text = "Mevduat Yöntemi:";
+            this.label6.Text = "Yatırım Yöntemi:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(45, 396);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(104, 16);
+            this.label7.Size = new System.Drawing.Size(93, 16);
             this.label7.TabIndex = 6;
-            this.label7.Text = "Mevduat Miktarı:";
+            this.label7.Text = "Yatırım Miktarı:";
             // 
             // accnoTxt
             // 
@@ -190,7 +190,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Name = "creditForm";
-            this.Text = "Kredi Formu";
+            this.Text = "Yatırım Formu";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -132,7 +132,7 @@ namespace FinansMerkezi
                             int rowsAffected = command.ExecuteNonQuery();
                             if (rowsAffected > 0)
                             {
-                                MessageBox.Show("Mevzuat işlemi başarıyla tamamlandı.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Yatırım işlemi başarıyla tamamlandı.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                             else
                             {

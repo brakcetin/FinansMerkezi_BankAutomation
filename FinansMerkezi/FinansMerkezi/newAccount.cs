@@ -9,8 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
-
 using MySql.Data.MySqlClient;
+using System.Globalization;
+using System.Xml.Linq;
 
 namespace FinansMerkezi
 {
@@ -62,6 +63,7 @@ namespace FinansMerkezi
         {
             using (MySqlConnection connection = DataBaseHelper.GetConnection())
             {
+                //hesap numarası kendiliğinden oluşur ve her kullanıcı ekledikçe 1 artarak gider
                 try
                 {
                     connection.Open();
@@ -123,14 +125,19 @@ namespace FinansMerkezi
 
             decimal newAccountNo = Convert.ToDecimal(accnoTxt.Text);
             string name = nameTxt.Text;
+            name = CapitalizeFirstLetters(name); //ilk harflerini büyük yapar
             DateTime dateOfBirth = dateTimePicker1.Value.Date; //doğum tarihi
             string phoneNo = phoneTxt.Text;
             string address = addressTxt.Text;
+            address = CapitalizeFirstLetters(address);
             string district = distTxt.Text;
+            district = CapitalizeFirstLetters(district);
             string state; // ComboBox seçilen değeri alır
             byte[] profile = GetProfileBytes(); // Profil verisini byte dizisi olarak alır
             string motherName = momTxt.Text;
+            motherName = CapitalizeFirstLetters(motherName);
             string fatherName = dadTxt.Text;
+            fatherName = CapitalizeFirstLetters(fatherName);
             string date = DateTime.Now.ToString("dd / MM / yyyy");
             string balanceText = blncTxt.Text;
 
@@ -147,7 +154,7 @@ namespace FinansMerkezi
                 state = comboBox1.SelectedItem.ToString();
                 if (!IsPhoneNumberValid(phoneNo))
                 {
-                    MessageBox.Show("Lütfen geçerli bir telefon numarası girin.");
+                    MessageBox.Show("Lütfen 10 haneli geçerli bir telefon numarası girin.");
                     phoneTxt.Focus(); // Metin kutusuna odaklanma
                     phoneTxt.SelectAll(); // Tüm metni seçme
                     return;
@@ -240,6 +247,14 @@ namespace FinansMerkezi
             bool isValid = Regex.IsMatch(phoneNumber, pattern);
 
             return isValid;
+        }
+
+        //ilk harflerini büyük yapar
+        private string CapitalizeFirstLetters(string text)
+        {
+            TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo;
+            string result = textInfo.ToTitleCase(text);
+            return result;
         }
     }
 }

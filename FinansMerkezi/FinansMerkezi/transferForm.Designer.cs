@@ -46,7 +46,7 @@
             // 
             // sentBtn
             // 
-            this.sentBtn.Location = new System.Drawing.Point(231, 443);
+            this.sentBtn.Location = new System.Drawing.Point(248, 443);
             this.sentBtn.Name = "sentBtn";
             this.sentBtn.Size = new System.Drawing.Size(123, 46);
             this.sentBtn.TabIndex = 28;

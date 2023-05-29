@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using MySql.Data.MySqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace FinansMerkezi
 {
@@ -73,6 +75,8 @@ namespace FinansMerkezi
             string toaccno = toaccnoTxt.Text;
             decimal toamount;
             string date = label2.Text;
+            decimal senderNewBalance;
+            decimal senderCurrentBalance;
 
             //alanlar boş bırakıldığı durumda hata verir
             if (!decimal.TryParse(fromaccnoTxt.Text, out new_fromaccno))
@@ -97,48 +101,115 @@ namespace FinansMerkezi
                     MessageBox.Show("Hesap numarası değiştirilemez.", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return; // Hata durumunda işlemi sonlandırır
                 }
-                using (MySqlConnection connection = DataBaseHelper.GetConnection())
+                if (infos.Balance >= toamount)
                 {
-                    if (connection.State != ConnectionState.Open)
+                    using (MySqlConnection connection = DataBaseHelper.GetConnection())
                     {
-                        connection.Open();
-                    }
-                    string query1 = "SELECT Account_No FROM useraccount";
-                    using (MySqlCommand command = new MySqlCommand(query1, connection))
-                    {
-
-                    }
-                        string query2 = "INSERT INTO transfer (date, account_no, name, balance, totransfer) " +
-                        "VALUES (@date, @accountNo, @Name, @balance,@totransfer)";
-                    using (MySqlCommand command = new MySqlCommand(query2, connection))
-                    {
-                        command.Parameters.AddWithValue("@accountNo", infos.AccountNo);
-                        command.Parameters.AddWithValue("@Name", infos.Name);
-                        command.Parameters.AddWithValue("@balance", infos.Balance);
-                        command.Parameters.AddWithValue("@totransfer", toamount);
-                        command.Parameters.AddWithValue("@date", date);
-
-                        try     //yapılan işlem başarılı mı değil mi ona göre uyarı verir
+                        if (connection.State != ConnectionState.Open)
                         {
-                            // Sorguyu çalıştırın
-                            int rowsAffected = command.ExecuteNonQuery();
-                            if (rowsAffected > 0)
+                            connection.Open();
+                        }
+
+                        //veri setindeki useraccount tablosunda bulunan kullanıcıların bakiyelerini günceller
+                        string query1 = "SELECT Balance FROM useraccount WHERE Account_No = @senderAccountNo";
+                        using (MySqlCommand senderBalanceCommand = new MySqlCommand(query1, connection))
+                        {
+                            senderBalanceCommand.Parameters.AddWithValue("@senderAccountNo", new_fromaccno);
+                            senderCurrentBalance = (decimal)senderBalanceCommand.ExecuteScalar();
+
+                            // Gönderen kişinin yeni Balance değerini hesaplar
+                            senderNewBalance = senderCurrentBalance - toamount;
+
+                            // Gönderen kişinin Balance değerini günceller
+                            string updateSenderBalanceQuery = "UPDATE useraccount SET Balance = @senderNewBalance WHERE Account_No = @senderAccountNo";
+                            using (MySqlCommand updateSenderBalanceCommand = new MySqlCommand(updateSenderBalanceQuery, connection))
                             {
-                                MessageBox.Show("Mevzuat işlemi başarıyla tamamlandı.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            }
-                            else
-                            {
-                                MessageBox.Show("Yatırım işlemi gerçekleştirilemedi.", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                updateSenderBalanceCommand.Parameters.AddWithValue("@senderNewBalance", senderNewBalance);
+                                updateSenderBalanceCommand.Parameters.AddWithValue("@senderAccountNo", new_fromaccno);
+                                updateSenderBalanceCommand.ExecuteNonQuery();   
                             }
                         }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("Sorgu Hatası: " + ex.Message, "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
 
+                        //veri setindeki useraccount tablosunda bulunan kullanıcıların bakiyelerini günceller
+                        string receiverBalanceQuery = "SELECT Balance FROM useraccount WHERE Account_No = @receiverAccountNo";
+                        using (MySqlCommand receiverBalanceCommand = new MySqlCommand(receiverBalanceQuery, connection))
+                        {
+                            receiverBalanceCommand.Parameters.AddWithValue("@receiverAccountNo", toaccno);
+                            object receiverBalanceResult = receiverBalanceCommand.ExecuteScalar();
+
+                            //Paranın gönderileceği hesap var mı yok kontrol eder
+                            if (receiverBalanceResult != null && receiverBalanceResult != DBNull.Value)
+                            {
+                                decimal receiverCurrentBalance = (decimal)receiverBalanceResult;
+                                // Alan kişinin yeni Balance değerini hesaplayın
+                                decimal receiverNewBalance = receiverCurrentBalance + toamount;
+
+                                // Alan kişinin Balance değerini güncelleyin
+                                string updateReceiverBalanceQuery = "UPDATE useraccount SET Balance = @receiverNewBalance WHERE Account_No = @receiverAccountNo";
+                                using (MySqlCommand updateReceiverBalanceCommand = new MySqlCommand(updateReceiverBalanceQuery, connection))
+                                {
+                                    updateReceiverBalanceCommand.Parameters.AddWithValue("@receiverNewBalance", receiverNewBalance);
+                                    updateReceiverBalanceCommand.Parameters.AddWithValue("@receiverAccountNo", toaccno);
+                                    updateReceiverBalanceCommand.ExecuteNonQuery();
+                                }
+                            }
+                            else //hesap yoksa hata verir
+                            {
+                                MessageBox.Show("Alıcı hesap bulunamadı", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
+
+
+                        }
+
+                        //veri tabanındaki transfer isimli tabloya gerekli bilgileri girer
+                        string query2 = "INSERT INTO transfer (date, account_no, name, first_balance, totransfer, toaccount_no) " +
+                            "VALUES (@date, @accountNo, @Name, @balance,@totransfer,@toaccount_no)";
+                        using (MySqlCommand command = new MySqlCommand(query2, connection))
+                        {
+                            command.Parameters.AddWithValue("@accountNo", infos.AccountNo);
+                            command.Parameters.AddWithValue("@Name", infos.Name);
+                            command.Parameters.AddWithValue("@balance", senderCurrentBalance);
+                            command.Parameters.AddWithValue("@totransfer", toamount);
+                            command.Parameters.AddWithValue("@date", date);
+                            command.Parameters.AddWithValue("@toaccount_no", toaccno);
+
+                            try     //yapılan işlem başarılı mı değil mi ona göre uyarı verir
+                            {
+                                // Sorguyu çalıştırın
+                                int rowsAffected = command.ExecuteNonQuery();
+                                if (rowsAffected > 0)
+                                {
+                                    MessageBox.Show("Transfer işlemi başarıyla tamamlandı.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    ClearFormFields();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Transfer işlemi gerçekleştirilemedi.", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Sorgu Hatası: " + ex.Message, "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+
+                    }
                 }
+                else
+                {
+                    MessageBox.Show("Yetersiz bakiye!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
             }
+        }
+        private void ClearFormFields()
+        {
+            fromaccnoTxt.Text = string.Empty;
+            nameTxt.Text = string.Empty;
+            blncTxt.Text = string.Empty;
+            toaccnoTxt.Text = string.Empty;
+            toamountTxt.Text = string.Empty;
         }
     }
 }

@@ -192,6 +192,9 @@
     <EmbeddedResource Include="debitForm.resx">
       <DependentUpon>debitForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fdForm.resx">
+      <DependentUpon>fdForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
