@@ -138,7 +138,7 @@ namespace FinansMerkezi
             motherName = CapitalizeFirstLetters(motherName);
             string fatherName = dadTxt.Text;
             fatherName = CapitalizeFirstLetters(fatherName);
-            string date = DateTime.Now.ToString("dd / MM / yyyy");
+            string date = DateTime.Now.ToString("dd / MM / yyyy HH:mm:ss");
             string balanceText = blncTxt.Text;
 
             if (string.IsNullOrEmpty(name) || dateOfBirth == DateTime.MinValue.Date || string.IsNullOrEmpty(phoneNo) ||

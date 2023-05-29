@@ -24,11 +24,12 @@ namespace FinansMerkezi
         }
         private void loaddate()
         {
-            label2.Text = DateTime.UtcNow.ToString("dd / MM / yyyy");
+            label2.Text = DateTime.Now.ToString("dd / MM / yyyy");
         }
 
         private void detailsBtn_Click(object sender, EventArgs e)
         {
+            infos.AccountNo = 0;
             using (MySqlConnection connection = DataBaseHelper.GetConnection())
             {
                 if (connection.State != ConnectionState.Open)
@@ -36,7 +37,19 @@ namespace FinansMerkezi
                     connection.Open();
                 }
 
-                infos.AccountNo = Convert.ToDecimal(fromaccnoTxt.Text);
+                //Hesap numarası yerine girilen değerin boş olup olmadığını kontrol eder
+                if (string.IsNullOrEmpty(fromaccnoTxt.Text))
+                {
+                    MessageBox.Show("Detayları görmek için lütfen bir hesap numarası giriniz!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (!decimal.TryParse(fromaccnoTxt.Text, out decimal accno))
+                {
+                    MessageBox.Show("Hesap numarası rakamlardan oluşmak zorundadır!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                infos.AccountNo = accno;
+
                 //Hesap numarasını kullanarak bakiye ve ad-soyad bilgilerini sorgular ve ilgili TextBox'lara yazdırır
                 string query = "SELECT Name, Balance FROM useraccount WHERE Account_No = @accountNo";
                 using (MySqlCommand command = new MySqlCommand(query, connection))
@@ -57,13 +70,15 @@ namespace FinansMerkezi
                             else
                             {
                                 MessageBox.Show("Hesap numaranız bulunamadı", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
                             }
                         }
                     }
 
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Sorgu Hatası:", ex.Message);
+                        MessageBox.Show("Hata: " + ex.GetType().Name + Environment.NewLine + "Hata Detayı: " + ex.Message, "Sorgu Hatası!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
                     }
                 }
             }
@@ -74,7 +89,7 @@ namespace FinansMerkezi
             decimal new_fromaccno;
             string toaccno = toaccnoTxt.Text;
             decimal toamount;
-            string date = label2.Text;
+            string date = DateTime.Now.ToString("dd / MM / yyyy HH:mm:ss");
             decimal senderNewBalance;
             decimal senderCurrentBalance;
 
@@ -126,7 +141,7 @@ namespace FinansMerkezi
                             {
                                 updateSenderBalanceCommand.Parameters.AddWithValue("@senderNewBalance", senderNewBalance);
                                 updateSenderBalanceCommand.Parameters.AddWithValue("@senderAccountNo", new_fromaccno);
-                                updateSenderBalanceCommand.ExecuteNonQuery();   
+                                updateSenderBalanceCommand.ExecuteNonQuery();
                             }
                         }
 
@@ -186,11 +201,13 @@ namespace FinansMerkezi
                                 else
                                 {
                                     MessageBox.Show("Transfer işlemi gerçekleştirilemedi.", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    return;
                                 }
                             }
                             catch (Exception ex)
                             {
                                 MessageBox.Show("Sorgu Hatası: " + ex.Message, "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
                             }
                         }
 
@@ -199,6 +216,7 @@ namespace FinansMerkezi
                 else
                 {
                     MessageBox.Show("Yetersiz bakiye!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
 
             }

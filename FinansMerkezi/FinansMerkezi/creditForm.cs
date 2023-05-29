@@ -38,6 +38,7 @@ namespace FinansMerkezi
 
         private void detailsBtn_Click(object sender, EventArgs e)
         {
+            infos.AccountNo = 0;
             using (MySqlConnection connection = DataBaseHelper.GetConnection())
             {
                 if (connection.State != ConnectionState.Open)
@@ -45,7 +46,19 @@ namespace FinansMerkezi
                     connection.Open();
                 }
 
-                infos.AccountNo = Convert.ToDecimal(accnoTxt.Text);
+                //Hesap numarası yerine girilen değerin boş olup olmadığını kontrol eder
+                if (string.IsNullOrEmpty(accnoTxt.Text))
+                {
+                    MessageBox.Show("Detayları görmek için lütfen bir hesap numarası giriniz!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (!decimal.TryParse(accnoTxt.Text, out decimal accno))
+                {
+                    MessageBox.Show("Hesap numarası rakamlardan oluşmak zorundadır!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                infos.AccountNo = accno;
+
                 //Hesap numarasını kullanarak bakiye ve ad-soyad bilgilerini sorgular ve ilgili TextBox'lara yazdırır
                 string query = "SELECT Name, Balance FROM useraccount WHERE Account_No = @accountNo";
                 using (MySqlCommand command = new MySqlCommand(query, connection))
@@ -82,40 +95,66 @@ namespace FinansMerkezi
         {
             decimal new_accno;
             string mode = modecomboBox.Text;
-            decimal depamount;
-            string date = label2.Text;
+            string date = DateTime.Now.ToString("dd / MM / yyyy HH:mm:ss");
 
             //alanlar boş bırakıldığı durumda hata verir
-            if (!decimal.TryParse(accnoTxt.Text, out new_accno))
+            if (modecomboBox.SelectedItem != null && !string.IsNullOrEmpty(modecomboBox.SelectedItem.ToString()))   //combobox boş mu değil mi, kontrol eder
             {
-                MessageBox.Show("Alanlar boş bırakılamaz!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                mode = modecomboBox.SelectedItem.ToString();     //combobox'ı atar
+            }
+            else
+            {
+                // ComboBox'ta seçili bir öğe yoksa uygulanacak işlem
+                MessageBox.Show("Alanlar boş bırakılamaz!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (!decimal.TryParse(damountTxt.Text, out depamount))
-            {
-                MessageBox.Show("Alanlar boş bırakılamaz!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            if (modecomboBox.SelectedItem == null || string.IsNullOrEmpty(date))
+            if (string.IsNullOrEmpty(accnoTxt.Text) || string.IsNullOrEmpty(damountTxt.Text))
             {
                 MessageBox.Show("Alanlar boş bırakılamaz!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             else
             {
+                //veri setinde bulunan bir hesap numarası girilmiş mi diye kontrol eder
+                new_accno = Convert.ToDecimal(accnoTxt.Text);
                 if (infos.AccountNo != new_accno)
                 {
                     MessageBox.Show("Hesap numarası değiştirilemez.", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return; // Hata durumunda işlemi sonlandırır
                 }
-                
+                //yatırılacak tutara sadece sayı girilsin istiyorum
+                if (!decimal.TryParse(damountTxt.Text, out decimal depamount))
+                {
+                    MessageBox.Show("Alanlar boş bırakılamaz!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
                 using (MySqlConnection connection = DataBaseHelper.GetConnection())
                 {
                     if (connection.State != ConnectionState.Open)
                     {
                         connection.Open();
                     }
-                    string query = "INSERT INTO deposit (AccountNo, Name, OldBalance, Mode, DipAmount, Date) " +
+
+                    //veri setindeki useraccount tablosunda bulunan kullanıcıların bakiyelerini günceller
+                    string query1 = "SELECT Balance FROM useraccount WHERE Account_No = @AccountNo";
+                    using (MySqlCommand senderBalanceCommand = new MySqlCommand(query1, connection))
+                    {
+                        senderBalanceCommand.Parameters.AddWithValue("@AccountNo", new_accno);
+                        infos.Balance = (decimal)senderBalanceCommand.ExecuteScalar();
+                        decimal NewBalance = infos.Balance + depamount;
+
+                        // Gönderen kişinin Balance değerini günceller
+                        string updateSenderBalanceQuery = "UPDATE useraccount SET Balance = @NewBalance WHERE Account_No = @AccountNo";
+                        using (MySqlCommand updateSenderBalanceCommand = new MySqlCommand(updateSenderBalanceQuery, connection))
+                        {
+                            updateSenderBalanceCommand.Parameters.AddWithValue("@NewBalance", NewBalance);
+                            updateSenderBalanceCommand.Parameters.AddWithValue("@AccountNo", new_accno);
+                            updateSenderBalanceCommand.ExecuteNonQuery();
+                        }
+                    }
+
+                    string query = "INSERT INTO investment (AccountNo, Name, OldBalance, Mode, DipAmount, Date) " +
                         "VALUES (@accountNo, @Name, @OldBalance,@mode, @dipamount, @date)";
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {

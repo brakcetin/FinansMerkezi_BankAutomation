@@ -75,21 +75,21 @@
             // yeniHesapEkleToolStripMenuItem
             // 
             this.yeniHesapEkleToolStripMenuItem.Name = "yeniHesapEkleToolStripMenuItem";
-            this.yeniHesapEkleToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.yeniHesapEkleToolStripMenuItem.Size = new System.Drawing.Size(217, 26);
             this.yeniHesapEkleToolStripMenuItem.Text = "Yeni Hesap Ekle";
             this.yeniHesapEkleToolStripMenuItem.Click += new System.EventHandler(this.yeniHesapEkleToolStripMenuItem_Click);
             // 
             // kullanıcıEkleGüncelleToolStripMenuItem
             // 
             this.kullanıcıEkleGüncelleToolStripMenuItem.Name = "kullanıcıEkleGüncelleToolStripMenuItem";
-            this.kullanıcıEkleGüncelleToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.kullanıcıEkleGüncelleToolStripMenuItem.Size = new System.Drawing.Size(217, 26);
             this.kullanıcıEkleGüncelleToolStripMenuItem.Text = "Hesap Sil/Güncelle";
             this.kullanıcıEkleGüncelleToolStripMenuItem.Click += new System.EventHandler(this.kullanıcıEkleGüncelleToolStripMenuItem_Click);
             // 
             // tümHesaplarToolStripMenuItem
             // 
             this.tümHesaplarToolStripMenuItem.Name = "tümHesaplarToolStripMenuItem";
-            this.tümHesaplarToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.tümHesaplarToolStripMenuItem.Size = new System.Drawing.Size(217, 26);
             this.tümHesaplarToolStripMenuItem.Text = "Tüm Müşteriler";
             this.tümHesaplarToolStripMenuItem.Click += new System.EventHandler(this.tümHesaplarToolStripMenuItem_Click);
             // 
@@ -108,14 +108,14 @@
             // 
             this.mevduatToolStripMenuItem.Name = "mevduatToolStripMenuItem";
             this.mevduatToolStripMenuItem.Size = new System.Drawing.Size(241, 26);
-            this.mevduatToolStripMenuItem.Text = "Yatırım Formu";
+            this.mevduatToolStripMenuItem.Text = "Para Yatırma";
             this.mevduatToolStripMenuItem.Click += new System.EventHandler(this.mevduatToolStripMenuItem_Click);
             // 
             // paraÇekmekToolStripMenuItem
             // 
             this.paraÇekmekToolStripMenuItem.Name = "paraÇekmekToolStripMenuItem";
             this.paraÇekmekToolStripMenuItem.Size = new System.Drawing.Size(241, 26);
-            this.paraÇekmekToolStripMenuItem.Text = "Para Çekmek";
+            this.paraÇekmekToolStripMenuItem.Text = "Para Çekme";
             this.paraÇekmekToolStripMenuItem.Click += new System.EventHandler(this.paraÇekmekToolStripMenuItem_Click);
             // 
             // transferİşlemleriToolStripMenuItem

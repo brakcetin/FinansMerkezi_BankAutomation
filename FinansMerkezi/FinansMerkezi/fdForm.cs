@@ -13,17 +13,15 @@ namespace FinansMerkezi
 {
     public partial class fdForm : Form
     {
-        private Informations infos;
         public fdForm()
         {
             InitializeComponent();
             loaddate();
             loadmode();
-            infos = new Informations();
         }
         private void loaddate()
         {
-            label2.Text = DateTime.UtcNow.ToString("dd / MM / yyyy");
+            label2.Text = DateTime.Now.ToString("dd / MM / yyyy");
         }
         private void loadmode()
         {
@@ -39,7 +37,7 @@ namespace FinansMerkezi
             string period_txt = periodTxt.Text;
             string interest_txt = interestTxt.Text;
             string maturity_date = string.Empty;
-            string start_date = DateTime.UtcNow.ToString("dd / MM / yyyy");
+            string start_date = DateTime.Now.ToString("dd / MM / yyyy HH:mm:ss");
             decimal senderNewBalance=0;
             decimal senderCurrentBalance;
             
@@ -53,7 +51,6 @@ namespace FinansMerkezi
                 MessageBox.Show("Alanlar boş bırakılamaz!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
             
             if (string.IsNullOrEmpty(period_txt) || string.IsNullOrEmpty(liras_txt) || string.IsNullOrEmpty(interest_txt) || string.IsNullOrEmpty(accnotxt))
             {
@@ -109,7 +106,7 @@ namespace FinansMerkezi
                 //Süre (gün) yerine girilen değerin hem boş olmadığını hem de sayı girilip girilmediğini kontrol eder
                 if (int.TryParse(periodInput, out int period))
                 {
-                    maturity_date = (DateTime.UtcNow.AddDays(Convert.ToInt32(periodTxt.Text))).ToString();
+                    maturity_date = (DateTime.UtcNow.AddDays(Convert.ToInt32(periodTxt.Text))).ToString("dd / MM / yyyy");
                 }
                 else
                 {
@@ -149,8 +146,8 @@ namespace FinansMerkezi
                             updateSenderBalanceCommand.ExecuteNonQuery();
                         }
                     }
-
-                    string query = "INSERT INTO fd (Account_No, Mode, Liras, Period, Interest_rate, Maturity_date, Maturity_Amount, Start_Date) " +
+                    //veri setindeki fixed_deposit isimli tabloya gerekli bilgileri girer
+                    string query = "INSERT INTO fixed_deposit (Account_No, Mode, Liras, Period, Interest_rate, Maturity_date, Maturity_Amount, Start_Date) " +
                         "VALUES (@accountNo, @Mode, @Liras,@Period, @Interest_rate, @Maturity_date, @Maturity_Amount, @Start_Date)";
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
@@ -170,23 +167,30 @@ namespace FinansMerkezi
                             if (rowsAffected > 0)
                             {
                                 MessageBox.Show("Vadesiz Mevduat formunuz başarıyla tamamlandı.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                ClearFormFields();
                             }
                             else
                             {
                                 MessageBox.Show("İşlem gerçekleştirilemedi.", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
                             }
                         }
                         catch (Exception ex)
                         {
                             MessageBox.Show("Hata: " + ex.GetType().Name + Environment.NewLine + "Hata Detayı: " + ex.Message, "Sorgu Hatası!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
                         }
                     }
-
                 }
-
             }
-
-
+        }
+        private void ClearFormFields()
+        {
+            accnoTxt.Text = string.Empty;
+            lirasTxt.Text = string.Empty;
+            periodTxt.Text = string.Empty;
+            modecomboBox.Items.Clear();
+            interestTxt.Text = string.Empty;
         }
     }
 }

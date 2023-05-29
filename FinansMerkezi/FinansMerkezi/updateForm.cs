@@ -68,14 +68,25 @@ namespace FinansMerkezi
 
         private void detBtn_Click(object sender, EventArgs e)
         {
-            string accountNo = accnoTxt.Text;
+
+            //Hesap numarası yerine girilen değerin boş olup olmadığını kontrol eder
+            if (string.IsNullOrEmpty(accnoTxt.Text))
+            {
+                MessageBox.Show("Detayları görmek için lütfen bir hesap numarası giriniz!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (!decimal.TryParse(accnoTxt.Text, out decimal accno))
+            {
+                MessageBox.Show("Hesap numarası rakamlardan oluşmak zorundadır!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             using (MySqlConnection connection = DataBaseHelper.GetConnection())
             {
                 string query = "SELECT * FROM useraccount WHERE Account_No = @accountNo";
 
                 MySqlCommand command = new MySqlCommand(query, connection);
-                command.Parameters.AddWithValue("@accountNo", accountNo);
+                command.Parameters.AddWithValue("@accountNo", accno);
 
                 DataTable dt = new DataTable();
 
@@ -92,6 +103,12 @@ namespace FinansMerkezi
         private void searchBtn_Click(object sender, EventArgs e)
         {
             string UserName = nameTxt.Text;
+            //Ad-Soyad yerine girilen değerin boş olup olmadığını kontrol eder
+            if (string.IsNullOrEmpty(nameTxt.Text))
+            {
+                MessageBox.Show("Detayları görmek için Ad-Soyad bilgilerinizi giriniz!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             using (MySqlConnection connection = DataBaseHelper.GetConnection())
             {

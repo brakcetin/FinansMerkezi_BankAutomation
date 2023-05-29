@@ -186,6 +186,9 @@
     <EmbeddedResource Include="allUsers.resx">
       <DependentUpon>allUsers.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="balanceSheet.resx">
+      <DependentUpon>balanceSheet.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="creditForm.resx">
       <DependentUpon>creditForm.cs</DependentUpon>
     </EmbeddedResource>

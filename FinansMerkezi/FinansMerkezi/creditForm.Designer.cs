@@ -78,40 +78,40 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(45, 201);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(34, 16);
+            this.label4.Size = new System.Drawing.Size(71, 16);
             this.label4.TabIndex = 3;
-            this.label4.Text = "İsim:";
+            this.label4.Text = "Ad-Soyad:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(45, 266);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 16);
+            this.label5.Size = new System.Drawing.Size(52, 16);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Önceki Bakiye:";
+            this.label5.Text = "Bakiye:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(45, 331);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(103, 16);
+            this.label6.Size = new System.Drawing.Size(140, 16);
             this.label6.TabIndex = 5;
-            this.label6.Text = "Yatırım Yöntemi:";
+            this.label6.Text = "Para Yatırma Yöntemi:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(45, 396);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(93, 16);
+            this.label7.Size = new System.Drawing.Size(117, 16);
             this.label7.TabIndex = 6;
-            this.label7.Text = "Yatırım Miktarı:";
+            this.label7.Text = "Yatıralacak Miktar:";
             // 
             // accnoTxt
             // 
-            this.accnoTxt.Location = new System.Drawing.Point(192, 129);
+            this.accnoTxt.Location = new System.Drawing.Point(248, 129);
             this.accnoTxt.Name = "accnoTxt";
             this.accnoTxt.Size = new System.Drawing.Size(263, 22);
             this.accnoTxt.TabIndex = 7;
@@ -119,7 +119,7 @@
             // nameTxt
             // 
             this.nameTxt.Enabled = false;
-            this.nameTxt.Location = new System.Drawing.Point(192, 195);
+            this.nameTxt.Location = new System.Drawing.Point(248, 195);
             this.nameTxt.Name = "nameTxt";
             this.nameTxt.ReadOnly = true;
             this.nameTxt.Size = new System.Drawing.Size(263, 22);
@@ -128,7 +128,7 @@
             // oldblncTxt
             // 
             this.oldblncTxt.Enabled = false;
-            this.oldblncTxt.Location = new System.Drawing.Point(192, 263);
+            this.oldblncTxt.Location = new System.Drawing.Point(248, 260);
             this.oldblncTxt.Name = "oldblncTxt";
             this.oldblncTxt.ReadOnly = true;
             this.oldblncTxt.Size = new System.Drawing.Size(263, 22);
@@ -136,7 +136,7 @@
             // 
             // damountTxt
             // 
-            this.damountTxt.Location = new System.Drawing.Point(192, 390);
+            this.damountTxt.Location = new System.Drawing.Point(248, 390);
             this.damountTxt.Name = "damountTxt";
             this.damountTxt.Size = new System.Drawing.Size(263, 22);
             this.damountTxt.TabIndex = 11;
@@ -144,14 +144,14 @@
             // modecomboBox
             // 
             this.modecomboBox.FormattingEnabled = true;
-            this.modecomboBox.Location = new System.Drawing.Point(192, 322);
+            this.modecomboBox.Location = new System.Drawing.Point(248, 322);
             this.modecomboBox.Name = "modecomboBox";
             this.modecomboBox.Size = new System.Drawing.Size(263, 24);
             this.modecomboBox.TabIndex = 12;
             // 
             // detailsBtn
             // 
-            this.detailsBtn.Location = new System.Drawing.Point(495, 119);
+            this.detailsBtn.Location = new System.Drawing.Point(551, 119);
             this.detailsBtn.Name = "detailsBtn";
             this.detailsBtn.Size = new System.Drawing.Size(131, 38);
             this.detailsBtn.TabIndex = 13;
@@ -161,11 +161,11 @@
             // 
             // updateBtn
             // 
-            this.updateBtn.Location = new System.Drawing.Point(192, 443);
+            this.updateBtn.Location = new System.Drawing.Point(248, 441);
             this.updateBtn.Name = "updateBtn";
             this.updateBtn.Size = new System.Drawing.Size(123, 46);
             this.updateBtn.TabIndex = 14;
-            this.updateBtn.Text = "Güncelle";
+            this.updateBtn.Text = "Kaydet";
             this.updateBtn.UseVisualStyleBackColor = true;
             this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
             // 
@@ -190,7 +190,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Name = "creditForm";
-            this.Text = "Yatırım Formu";
+            this.Text = "Para Yatırma";
             this.ResumeLayout(false);
             this.PerformLayout();
 

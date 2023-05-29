@@ -28,42 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lirasTxt = new System.Windows.Forms.TextBox();
-            this.modecomboBox = new System.Windows.Forms.ComboBox();
-            this.periodTxt = new System.Windows.Forms.TextBox();
+            this.blncTxt = new System.Windows.Forms.TextBox();
             this.saveBtn = new System.Windows.Forms.Button();
-            this.interestTxt = new System.Windows.Forms.TextBox();
+            this.amountTxt = new System.Windows.Forms.TextBox();
             this.accnoTxt = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.dateLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.detailsBtn = new System.Windows.Forms.Button();
+            this.nameTxt = new System.Windows.Forms.TextBox();
+            this.modecomboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // lirasTxt
+            // blncTxt
             // 
-            this.lirasTxt.Location = new System.Drawing.Point(248, 260);
-            this.lirasTxt.Name = "lirasTxt";
-            this.lirasTxt.Size = new System.Drawing.Size(263, 22);
-            this.lirasTxt.TabIndex = 58;
-            // 
-            // modecomboBox
-            // 
-            this.modecomboBox.FormattingEnabled = true;
-            this.modecomboBox.Location = new System.Drawing.Point(248, 192);
-            this.modecomboBox.Name = "modecomboBox";
-            this.modecomboBox.Size = new System.Drawing.Size(263, 24);
-            this.modecomboBox.TabIndex = 57;
-            // 
-            // periodTxt
-            // 
-            this.periodTxt.Location = new System.Drawing.Point(248, 325);
-            this.periodTxt.Name = "periodTxt";
-            this.periodTxt.Size = new System.Drawing.Size(263, 22);
-            this.periodTxt.TabIndex = 56;
+            this.blncTxt.Enabled = false;
+            this.blncTxt.Location = new System.Drawing.Point(248, 260);
+            this.blncTxt.Name = "blncTxt";
+            this.blncTxt.ReadOnly = true;
+            this.blncTxt.Size = new System.Drawing.Size(263, 22);
+            this.blncTxt.TabIndex = 58;
             // 
             // saveBtn
             // 
@@ -71,15 +59,16 @@
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(123, 46);
             this.saveBtn.TabIndex = 55;
-            this.saveBtn.Text = "Save";
+            this.saveBtn.Text = "Kaydet";
             this.saveBtn.UseVisualStyleBackColor = true;
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
-            // interestTxt
+            // amountTxt
             // 
-            this.interestTxt.Location = new System.Drawing.Point(248, 390);
-            this.interestTxt.Name = "interestTxt";
-            this.interestTxt.Size = new System.Drawing.Size(263, 22);
-            this.interestTxt.TabIndex = 54;
+            this.amountTxt.Location = new System.Drawing.Point(248, 390);
+            this.amountTxt.Name = "amountTxt";
+            this.amountTxt.Size = new System.Drawing.Size(263, 22);
+            this.amountTxt.TabIndex = 54;
             // 
             // accnoTxt
             // 
@@ -88,15 +77,15 @@
             this.accnoTxt.Size = new System.Drawing.Size(263, 22);
             this.accnoTxt.TabIndex = 53;
             // 
-            // label2
+            // dateLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(418, 61);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 25);
-            this.label2.TabIndex = 47;
-            this.label2.Text = ".../.../...";
+            this.dateLabel.AutoSize = true;
+            this.dateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateLabel.Location = new System.Drawing.Point(418, 61);
+            this.dateLabel.Name = "dateLabel";
+            this.dateLabel.Size = new System.Drawing.Size(69, 25);
+            this.dateLabel.TabIndex = 47;
+            this.dateLabel.Text = ".../.../...";
             // 
             // label1
             // 
@@ -113,36 +102,36 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(45, 396);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(58, 16);
+            this.label7.Size = new System.Drawing.Size(109, 16);
             this.label7.TabIndex = 52;
-            this.label7.Text = "Faiz (%):";
+            this.label7.Text = "Çekilecek Miktar:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(45, 331);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(71, 16);
+            this.label6.Size = new System.Drawing.Size(137, 16);
             this.label6.TabIndex = 51;
-            this.label6.Text = "Süre (gün):";
+            this.label6.Text = "Para Çekme Yöntemi:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(45, 266);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(134, 16);
+            this.label5.Size = new System.Drawing.Size(52, 16);
             this.label5.TabIndex = 50;
-            this.label5.Text = "Yatırılacak Tutar (TL):";
+            this.label5.Text = "Bakiye:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(45, 201);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 16);
+            this.label4.Size = new System.Drawing.Size(71, 16);
             this.label4.TabIndex = 49;
-            this.label4.Text = "Yöntem:";
+            this.label4.Text = "Ad-Soyad:";
             // 
             // label3
             // 
@@ -153,19 +142,47 @@
             this.label3.TabIndex = 48;
             this.label3.Text = "Hesap Numarası:";
             // 
+            // detailsBtn
+            // 
+            this.detailsBtn.Location = new System.Drawing.Point(551, 119);
+            this.detailsBtn.Name = "detailsBtn";
+            this.detailsBtn.Size = new System.Drawing.Size(131, 38);
+            this.detailsBtn.TabIndex = 59;
+            this.detailsBtn.Text = "Detayları Göster";
+            this.detailsBtn.UseVisualStyleBackColor = true;
+            this.detailsBtn.Click += new System.EventHandler(this.detailsBtn_Click);
+            // 
+            // nameTxt
+            // 
+            this.nameTxt.Enabled = false;
+            this.nameTxt.Location = new System.Drawing.Point(248, 195);
+            this.nameTxt.Name = "nameTxt";
+            this.nameTxt.ReadOnly = true;
+            this.nameTxt.Size = new System.Drawing.Size(263, 22);
+            this.nameTxt.TabIndex = 61;
+            // 
+            // modecomboBox
+            // 
+            this.modecomboBox.FormattingEnabled = true;
+            this.modecomboBox.Location = new System.Drawing.Point(248, 322);
+            this.modecomboBox.Name = "modecomboBox";
+            this.modecomboBox.Size = new System.Drawing.Size(263, 24);
+            this.modecomboBox.TabIndex = 62;
+            // 
             // debitForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(895, 564);
-            this.Controls.Add(this.lirasTxt);
             this.Controls.Add(this.modecomboBox);
-            this.Controls.Add(this.periodTxt);
+            this.Controls.Add(this.nameTxt);
+            this.Controls.Add(this.detailsBtn);
+            this.Controls.Add(this.blncTxt);
             this.Controls.Add(this.saveBtn);
-            this.Controls.Add(this.interestTxt);
+            this.Controls.Add(this.amountTxt);
             this.Controls.Add(this.accnoTxt);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.dateLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -173,7 +190,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Name = "debitForm";
-            this.Text = "withdraw";
+            this.Text = "Para Çekme";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -181,18 +198,19 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox lirasTxt;
-        private System.Windows.Forms.ComboBox modecomboBox;
-        private System.Windows.Forms.TextBox periodTxt;
+        private System.Windows.Forms.TextBox blncTxt;
         private System.Windows.Forms.Button saveBtn;
-        private System.Windows.Forms.TextBox interestTxt;
+        private System.Windows.Forms.TextBox amountTxt;
         private System.Windows.Forms.TextBox accnoTxt;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label dateLabel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button detailsBtn;
+        private System.Windows.Forms.TextBox nameTxt;
+        private System.Windows.Forms.ComboBox modecomboBox;
     }
 }
