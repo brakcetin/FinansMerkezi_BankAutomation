@@ -59,7 +59,7 @@ namespace FinansMerkezi
                                     string username = reader.GetString(0);
                                     string password = reader.GetString(1);
                                 }
-                                
+                                ClearFormFields();
                                 Menu m1 = new Menu();
                                 m1.ShowDialog();
                             }
@@ -78,6 +78,11 @@ namespace FinansMerkezi
 
                 }
             }
+        }
+        private void ClearFormFields()
+        {
+            userTxt.Text = string.Empty;
+            passTxt.Text = string.Empty;
         }
     }
 }

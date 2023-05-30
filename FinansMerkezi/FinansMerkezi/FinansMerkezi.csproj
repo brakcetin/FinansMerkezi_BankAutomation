@@ -116,18 +116,18 @@
     <Compile Include="changePass.Designer.cs">
       <DependentUpon>changePass.cs</DependentUpon>
     </Compile>
+    <Compile Include="createAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="createAdmin.Designer.cs">
+      <DependentUpon>createAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataBaseHelper.cs" />
     <Compile Include="creditForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="creditForm.Designer.cs">
       <DependentUpon>creditForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="exitForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="exitForm.Designer.cs">
-      <DependentUpon>exitForm.cs</DependentUpon>
     </Compile>
     <Compile Include="fdForm.cs">
       <SubType>Form</SubType>
@@ -136,12 +136,6 @@
       <DependentUpon>fdForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Informations.cs" />
-    <Compile Include="logoutForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="logoutForm.Designer.cs">
-      <DependentUpon>logoutForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,20 +186,17 @@
     <EmbeddedResource Include="changePass.resx">
       <DependentUpon>changePass.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="createAdmin.resx">
+      <DependentUpon>createAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="creditForm.resx">
       <DependentUpon>creditForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="debitForm.resx">
       <DependentUpon>debitForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="exitForm.resx">
-      <DependentUpon>exitForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="fdForm.resx">
       <DependentUpon>fdForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="logoutForm.resx">
-      <DependentUpon>logoutForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>

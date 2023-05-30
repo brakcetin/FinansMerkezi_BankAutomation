@@ -79,108 +79,120 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(361, 84);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 16);
+            this.label2.Size = new System.Drawing.Size(41, 18);
             this.label2.TabIndex = 1;
             this.label2.Text = "Tarih";
             // 
             // datelLbl
             // 
             this.datelLbl.AutoSize = true;
+            this.datelLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.datelLbl.Location = new System.Drawing.Point(446, 84);
             this.datelLbl.Name = "datelLbl";
-            this.datelLbl.Size = new System.Drawing.Size(70, 16);
+            this.datelLbl.Size = new System.Drawing.Size(74, 18);
             this.datelLbl.TabIndex = 2;
             this.datelLbl.Text = "DateLabel";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(48, 154);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(109, 16);
+            this.label4.Size = new System.Drawing.Size(119, 18);
             this.label4.TabIndex = 3;
             this.label4.Text = "Hesap Numarası";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(48, 198);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 16);
+            this.label5.Size = new System.Drawing.Size(72, 18);
             this.label5.TabIndex = 4;
             this.label5.Text = "Ad-Soyad";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(48, 330);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(43, 16);
+            this.label6.Size = new System.Drawing.Size(46, 18);
             this.label6.TabIndex = 5;
             this.label6.Text = "Adres";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(48, 286);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(114, 16);
+            this.label7.Size = new System.Drawing.Size(125, 18);
             this.label7.TabIndex = 6;
             this.label7.Text = "Telefon Numarası";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(48, 242);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(88, 16);
+            this.label8.Size = new System.Drawing.Size(97, 18);
             this.label8.TabIndex = 7;
             this.label8.Text = "Doğum Tarihi";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(48, 395);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(28, 16);
+            this.label10.Size = new System.Drawing.Size(30, 18);
             this.label10.TabIndex = 9;
             this.label10.Text = "İlçe";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(48, 439);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(38, 16);
+            this.label9.Size = new System.Drawing.Size(42, 18);
             this.label9.TabIndex = 8;
             this.label9.Text = "Şehir";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(609, 462);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(63, 16);
+            this.label11.Size = new System.Drawing.Size(66, 18);
             this.label11.TabIndex = 12;
             this.label11.Text = "Baba Adı";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(609, 506);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(49, 16);
+            this.label12.Size = new System.Drawing.Size(52, 18);
             this.label12.TabIndex = 11;
             this.label12.Text = "Bakiye";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(609, 418);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(61, 16);
+            this.label13.Size = new System.Drawing.Size(65, 18);
             this.label13.TabIndex = 10;
             this.label13.Text = "Anne Adı";
             // 
@@ -188,6 +200,7 @@
             // 
             this.groupBox1.Controls.Add(this.umarriedRadio);
             this.groupBox1.Controls.Add(this.marriedRadio);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(540, 323);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(309, 67);
@@ -200,7 +213,7 @@
             this.umarriedRadio.AutoSize = true;
             this.umarriedRadio.Location = new System.Drawing.Point(124, 31);
             this.umarriedRadio.Name = "umarriedRadio";
-            this.umarriedRadio.Size = new System.Drawing.Size(64, 20);
+            this.umarriedRadio.Size = new System.Drawing.Size(68, 22);
             this.umarriedRadio.TabIndex = 1;
             this.umarriedRadio.Text = "Bekar";
             this.umarriedRadio.UseVisualStyleBackColor = true;
@@ -210,7 +223,7 @@
             this.marriedRadio.AutoSize = true;
             this.marriedRadio.Location = new System.Drawing.Point(6, 31);
             this.marriedRadio.Name = "marriedRadio";
-            this.marriedRadio.Size = new System.Drawing.Size(50, 20);
+            this.marriedRadio.Size = new System.Drawing.Size(52, 22);
             this.marriedRadio.TabIndex = 0;
             this.marriedRadio.Text = "Evli";
             this.marriedRadio.UseVisualStyleBackColor = true;
@@ -220,6 +233,7 @@
             this.groupBox2.Controls.Add(this.otherRadio);
             this.groupBox2.Controls.Add(this.maleRadio);
             this.groupBox2.Controls.Add(this.fmaleRadio);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(540, 235);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(309, 67);
@@ -232,7 +246,7 @@
             this.otherRadio.AutoSize = true;
             this.otherRadio.Location = new System.Drawing.Point(225, 31);
             this.otherRadio.Name = "otherRadio";
-            this.otherRadio.Size = new System.Drawing.Size(61, 20);
+            this.otherRadio.Size = new System.Drawing.Size(64, 22);
             this.otherRadio.TabIndex = 2;
             this.otherRadio.Text = "Diğer";
             this.otherRadio.UseVisualStyleBackColor = true;
@@ -242,7 +256,7 @@
             this.maleRadio.AutoSize = true;
             this.maleRadio.Location = new System.Drawing.Point(115, 31);
             this.maleRadio.Name = "maleRadio";
-            this.maleRadio.Size = new System.Drawing.Size(63, 20);
+            this.maleRadio.Size = new System.Drawing.Size(68, 22);
             this.maleRadio.TabIndex = 1;
             this.maleRadio.Text = "Erkek";
             this.maleRadio.UseVisualStyleBackColor = true;
@@ -252,7 +266,7 @@
             this.fmaleRadio.AutoSize = true;
             this.fmaleRadio.Location = new System.Drawing.Point(6, 31);
             this.fmaleRadio.Name = "fmaleRadio";
-            this.fmaleRadio.Size = new System.Drawing.Size(62, 20);
+            this.fmaleRadio.Size = new System.Drawing.Size(66, 22);
             this.fmaleRadio.TabIndex = 0;
             this.fmaleRadio.Text = "Kadın";
             this.fmaleRadio.UseVisualStyleBackColor = true;
@@ -268,6 +282,7 @@
             // 
             // imgBtn
             // 
+            this.imgBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.imgBtn.Location = new System.Drawing.Point(669, 199);
             this.imgBtn.Name = "imgBtn";
             this.imgBtn.Size = new System.Drawing.Size(180, 30);
@@ -278,7 +293,8 @@
             // 
             // save_btn
             // 
-            this.save_btn.Location = new System.Drawing.Point(154, 479);
+            this.save_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.save_btn.Location = new System.Drawing.Point(189, 481);
             this.save_btn.Name = "save_btn";
             this.save_btn.Size = new System.Drawing.Size(149, 43);
             this.save_btn.TabIndex = 17;
@@ -288,20 +304,23 @@
             // 
             // phoneTxt
             // 
+            this.phoneTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.phoneTxt.Location = new System.Drawing.Point(189, 279);
             this.phoneTxt.Name = "phoneTxt";
-            this.phoneTxt.Size = new System.Drawing.Size(254, 22);
+            this.phoneTxt.Size = new System.Drawing.Size(254, 24);
             this.phoneTxt.TabIndex = 18;
             // 
             // distTxt
             // 
+            this.distTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.distTxt.Location = new System.Drawing.Point(189, 389);
             this.distTxt.Name = "distTxt";
-            this.distTxt.Size = new System.Drawing.Size(254, 22);
+            this.distTxt.Size = new System.Drawing.Size(254, 24);
             this.distTxt.TabIndex = 20;
             // 
             // addressTxt
             // 
+            this.addressTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addressTxt.Location = new System.Drawing.Point(189, 324);
             this.addressTxt.Multiline = true;
             this.addressTxt.Name = "addressTxt";
@@ -310,55 +329,62 @@
             // 
             // nameTxt
             // 
+            this.nameTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameTxt.Location = new System.Drawing.Point(189, 192);
             this.nameTxt.Name = "nameTxt";
-            this.nameTxt.Size = new System.Drawing.Size(254, 22);
+            this.nameTxt.Size = new System.Drawing.Size(254, 24);
             this.nameTxt.TabIndex = 23;
             // 
             // accnoTxt
             // 
             this.accnoTxt.Cursor = System.Windows.Forms.Cursors.No;
             this.accnoTxt.Enabled = false;
+            this.accnoTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accnoTxt.Location = new System.Drawing.Point(189, 148);
             this.accnoTxt.Name = "accnoTxt";
             this.accnoTxt.ReadOnly = true;
-            this.accnoTxt.Size = new System.Drawing.Size(254, 22);
+            this.accnoTxt.Size = new System.Drawing.Size(254, 24);
             this.accnoTxt.TabIndex = 24;
             // 
             // comboBox1
             // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(189, 430);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(254, 24);
+            this.comboBox1.Size = new System.Drawing.Size(254, 26);
             this.comboBox1.TabIndex = 25;
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Location = new System.Drawing.Point(189, 235);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(254, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(254, 24);
             this.dateTimePicker1.TabIndex = 26;
             // 
             // momTxt
             // 
+            this.momTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.momTxt.Location = new System.Drawing.Point(699, 412);
             this.momTxt.Name = "momTxt";
-            this.momTxt.Size = new System.Drawing.Size(150, 22);
+            this.momTxt.Size = new System.Drawing.Size(150, 24);
             this.momTxt.TabIndex = 29;
             // 
             // blncTxt
             // 
+            this.blncTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.blncTxt.Location = new System.Drawing.Point(699, 500);
             this.blncTxt.Name = "blncTxt";
-            this.blncTxt.Size = new System.Drawing.Size(150, 22);
+            this.blncTxt.Size = new System.Drawing.Size(150, 24);
             this.blncTxt.TabIndex = 30;
             // 
             // dadTxt
             // 
+            this.dadTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dadTxt.Location = new System.Drawing.Point(699, 456);
             this.dadTxt.Name = "dadTxt";
-            this.dadTxt.Size = new System.Drawing.Size(150, 22);
+            this.dadTxt.Size = new System.Drawing.Size(150, 24);
             this.dadTxt.TabIndex = 31;
             // 
             // newAccount

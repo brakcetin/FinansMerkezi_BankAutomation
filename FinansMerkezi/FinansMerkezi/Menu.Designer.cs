@@ -44,7 +44,7 @@
             this.diğerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.çıkışYapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.şifreDeğiştirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.çıkışToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.adminHesabıOluşturToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -160,7 +160,7 @@
             this.diğerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.çıkışYapToolStripMenuItem,
             this.şifreDeğiştirToolStripMenuItem,
-            this.çıkışToolStripMenuItem});
+            this.adminHesabıOluşturToolStripMenuItem});
             this.diğerToolStripMenuItem.Name = "diğerToolStripMenuItem";
             this.diğerToolStripMenuItem.Size = new System.Drawing.Size(60, 24);
             this.diğerToolStripMenuItem.Text = "Diğer";
@@ -168,23 +168,23 @@
             // çıkışYapToolStripMenuItem
             // 
             this.çıkışYapToolStripMenuItem.Name = "çıkışYapToolStripMenuItem";
-            this.çıkışYapToolStripMenuItem.Size = new System.Drawing.Size(193, 26);
+            this.çıkışYapToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.çıkışYapToolStripMenuItem.Text = "Oturumu Kapat";
             this.çıkışYapToolStripMenuItem.Click += new System.EventHandler(this.çıkışYapToolStripMenuItem_Click);
             // 
             // şifreDeğiştirToolStripMenuItem
             // 
             this.şifreDeğiştirToolStripMenuItem.Name = "şifreDeğiştirToolStripMenuItem";
-            this.şifreDeğiştirToolStripMenuItem.Size = new System.Drawing.Size(193, 26);
+            this.şifreDeğiştirToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.şifreDeğiştirToolStripMenuItem.Text = "Şifre Değiştir";
             this.şifreDeğiştirToolStripMenuItem.Click += new System.EventHandler(this.şifreDeğiştirToolStripMenuItem_Click);
             // 
-            // çıkışToolStripMenuItem
+            // adminHesabıOluşturToolStripMenuItem
             // 
-            this.çıkışToolStripMenuItem.Name = "çıkışToolStripMenuItem";
-            this.çıkışToolStripMenuItem.Size = new System.Drawing.Size(193, 26);
-            this.çıkışToolStripMenuItem.Text = "Çıkış";
-            this.çıkışToolStripMenuItem.Click += new System.EventHandler(this.çıkışToolStripMenuItem_Click);
+            this.adminHesabıOluşturToolStripMenuItem.Name = "adminHesabıOluşturToolStripMenuItem";
+            this.adminHesabıOluşturToolStripMenuItem.Size = new System.Drawing.Size(237, 26);
+            this.adminHesabıOluşturToolStripMenuItem.Text = "Admin Hesabı Oluştur";
+            this.adminHesabıOluşturToolStripMenuItem.Click += new System.EventHandler(this.adminHesabıOluşturToolStripMenuItem_Click);
             // 
             // Menu
             // 
@@ -222,6 +222,6 @@
         private System.Windows.Forms.ToolStripMenuItem diğerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem çıkışYapToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem şifreDeğiştirToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem çıkışToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem adminHesabıOluşturToolStripMenuItem;
     }
 }

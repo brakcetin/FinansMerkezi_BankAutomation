@@ -92,9 +92,11 @@ namespace FinansMerkezi
             chngpass.Show();
         }
 
-        private void çıkışToolStripMenuItem_Click(object sender, EventArgs e)
+        private void adminHesabıOluşturToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            createAdmin newAdmin = new createAdmin();
+            newAdmin.MdiParent = this;
+            newAdmin.Show();
         }
     }
 }

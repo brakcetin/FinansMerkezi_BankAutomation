@@ -50,5 +50,4 @@ C:\Users\brakc\source\repos\Project\FinansMerkezi\FinansMerkezi\obj\Debug\Finans
 C:\Users\brakc\source\repos\Project\FinansMerkezi\FinansMerkezi\obj\Debug\FinansMerkezi.balanceSheet.resources
 C:\Users\brakc\source\repos\Project\FinansMerkezi\FinansMerkezi\obj\Debug\FinansMerkezi.viewFD.resources
 C:\Users\brakc\source\repos\Project\FinansMerkezi\FinansMerkezi\obj\Debug\FinansMerkezi.changePass.resources
-C:\Users\brakc\source\repos\Project\FinansMerkezi\FinansMerkezi\obj\Debug\FinansMerkezi.exitForm.resources
-C:\Users\brakc\source\repos\Project\FinansMerkezi\FinansMerkezi\obj\Debug\FinansMerkezi.logoutForm.resources
+C:\Users\brakc\source\repos\Project\FinansMerkezi\FinansMerkezi\obj\Debug\FinansMerkezi.createAdmin.resources

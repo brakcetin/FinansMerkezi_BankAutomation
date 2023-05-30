@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace FinansMerkezi
 {
@@ -89,6 +90,7 @@ namespace FinansMerkezi
                             }
 
                             MessageBox.Show("Şifre başarıyla değiştirildi!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            ClearFormFields();
                         }
                         catch (Exception ex)
                         {
@@ -102,6 +104,13 @@ namespace FinansMerkezi
         private bool VerifyPassword(string inputPassword, string hashedPassword)
         {
             return string.Equals(inputPassword, hashedPassword, StringComparison.OrdinalIgnoreCase);
+        }
+        private void ClearFormFields()
+        {
+            usrnmTxt.Text = string.Empty;
+            oldpassTxt.Text = string.Empty;
+            newpassTxt.Text = string.Empty;
+            repassTxt.Text = string.Empty;
         }
 
     }
