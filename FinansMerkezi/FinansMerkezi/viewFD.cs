@@ -20,8 +20,9 @@ namespace FinansMerkezi
 
         private void button1_Click(object sender, EventArgs e)
         {
+            DataGridViewDisplay();
             string searchDate = dateTimePicker1.Value.ToString("dd / MM / yyyy");
-            if(string.IsNullOrEmpty(searchDate))
+            if (string.IsNullOrEmpty(searchDate))
             {
                 MessageBox.Show("Lütfen bir tarih seçiniz!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -51,7 +52,16 @@ namespace FinansMerkezi
                     }
                 }
             }
-            
+
+        }
+        private void DataGridViewDisplay()
+        {
+            //datagridview1
+            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.White;
+            dataGridView1.DefaultCellStyle.SelectionForeColor = Color.Black;
+            //satır ve sütun genişliğini otomatik ayarlar
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridView1.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Regular);
         }
     }
 }

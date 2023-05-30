@@ -21,6 +21,7 @@ namespace FinansMerkezi
 
         private void loadUserAcc()
         {
+            DataGridViewDisplay();
             using (MySqlConnection connection = DataBaseHelper.GetConnection())
             {
                 if (connection.State != ConnectionState.Open)
@@ -41,6 +42,17 @@ namespace FinansMerkezi
                     }
                 }
             }
+        }
+        private void DataGridViewDisplay()
+        {
+            //datagridview1
+            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.White;
+            dataGridView1.DefaultCellStyle.SelectionForeColor = Color.Black;
+            //satır ve sütun genişliğini otomatik ayarlar
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridView1.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Regular);
+
         }
     }
 }

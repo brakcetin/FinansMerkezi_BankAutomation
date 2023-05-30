@@ -189,14 +189,23 @@
     <EmbeddedResource Include="balanceSheet.resx">
       <DependentUpon>balanceSheet.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="changePass.resx">
+      <DependentUpon>changePass.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="creditForm.resx">
       <DependentUpon>creditForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="debitForm.resx">
       <DependentUpon>debitForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="exitForm.resx">
+      <DependentUpon>exitForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fdForm.resx">
       <DependentUpon>fdForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="logoutForm.resx">
+      <DependentUpon>logoutForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
