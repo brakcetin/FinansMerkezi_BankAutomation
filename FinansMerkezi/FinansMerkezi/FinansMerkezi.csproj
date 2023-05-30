@@ -219,6 +219,9 @@
     <EmbeddedResource Include="updateForm.resx">
       <DependentUpon>updateForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="viewFD.resx">
+      <DependentUpon>viewFD.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

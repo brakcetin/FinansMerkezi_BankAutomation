@@ -37,7 +37,7 @@ namespace FinansMerkezi
             string period_txt = periodTxt.Text;
             string interest_txt = interestTxt.Text;
             string maturity_date = string.Empty;
-            string start_date = DateTime.Now.ToString("dd / MM / yyyy HH:mm:ss");
+            string start_date = DateTime.Now.ToString("dd / MM / yyyy");
             decimal senderNewBalance=0;
             decimal senderCurrentBalance;
             

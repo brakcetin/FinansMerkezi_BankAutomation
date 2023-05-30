@@ -146,7 +146,7 @@ namespace FinansMerkezi
     profile == null || string.IsNullOrEmpty(motherName) || string.IsNullOrEmpty(fatherName) ||
     string.IsNullOrEmpty(balanceText) || string.IsNullOrEmpty(gender) || string.IsNullOrEmpty(m_stat))
             {
-                MessageBox.Show("Alanlar boş bırakılamaz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Alanlar boş bırakılamaz", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             else
