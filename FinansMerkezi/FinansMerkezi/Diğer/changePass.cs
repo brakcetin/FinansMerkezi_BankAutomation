@@ -112,6 +112,40 @@ namespace FinansMerkezi
             newpassTxt.Text = string.Empty;
             repassTxt.Text = string.Empty;
         }
+        private void pictureBox2_MouseHover_1(object sender, EventArgs e)
+        {
+            pictureBox2.BackgroundImage = Properties.Resources.eye;
+            oldpassTxt.PasswordChar = '\0';
+        }
 
+        private void pictureBox2_MouseLeave_1(object sender, EventArgs e)
+        {
+            pictureBox2.BackgroundImage = Properties.Resources.hide;
+            oldpassTxt.PasswordChar = '*';
+        }
+
+        private void pictureBox3_MouseHover_1(object sender, EventArgs e)
+        {
+            pictureBox3.BackgroundImage = Properties.Resources.eye;
+            newpassTxt.PasswordChar = '\0';
+        }
+
+        private void pictureBox3_MouseLeave_1(object sender, EventArgs e)
+        {
+            pictureBox3.BackgroundImage = Properties.Resources.hide;
+            newpassTxt.PasswordChar = '*';
+        }
+
+        private void pictureBox1_MouseHover_1(object sender, EventArgs e)
+        {
+            pictureBox1.BackgroundImage = Properties.Resources.eye;
+            repassTxt.PasswordChar = '\0';
+        }
+
+        private void pictureBox1_MouseLeave_1(object sender, EventArgs e)
+        {
+            pictureBox1.BackgroundImage = Properties.Resources.hide;
+            repassTxt.PasswordChar = '*';
+        }
     }
 }

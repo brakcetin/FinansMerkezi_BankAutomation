@@ -238,9 +238,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resimler\eye.png" />
     <Content Include="Resimler\Fm.jpg" />
+    <Content Include="Resimler\hide.png" />
     <Content Include="Resimler\LOGO.ico" />
     <Content Include="Resimler\LOGO.png" />
+    <None Include="Resources\hide.png" />
+    <None Include="Resources\eye.png" />
+    <None Include="Resources\eye.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
