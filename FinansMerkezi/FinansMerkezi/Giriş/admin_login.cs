@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using MySql.Data.MySqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace FinansMerkezi
 {
@@ -84,6 +85,7 @@ namespace FinansMerkezi
             userTxt.Text = string.Empty;
             passTxt.Text = string.Empty;
         }
+        
         private void pictureBox2_MouseLeave(object sender, EventArgs e)
         {
             pictureBox2.BackgroundImage = Properties.Resources.hide;

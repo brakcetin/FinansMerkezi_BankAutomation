@@ -92,7 +92,7 @@
             this.passTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.passTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(229)))), ((int)(((byte)(156)))));
-            this.passTxt.Location = new System.Drawing.Point(372, 323);
+            this.passTxt.Location = new System.Drawing.Point(372, 330);
             this.passTxt.Name = "passTxt";
             this.passTxt.PasswordChar = '*';
             this.passTxt.Size = new System.Drawing.Size(181, 24);
@@ -131,7 +131,8 @@
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(229)))), ((int)(((byte)(156)))));
             this.pictureBox2.BackgroundImage = global::FinansMerkezi.Properties.Resources.hide;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(553, 323);
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox2.Location = new System.Drawing.Point(523, 330);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(30, 24);
             this.pictureBox2.TabIndex = 9;
@@ -156,15 +157,15 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
             this.ClientSize = new System.Drawing.Size(800, 511);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.passTxt);
             this.Controls.Add(this.userTxt);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.login_btn);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.passTxt);
             this.ForeColor = System.Drawing.Color.Black;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "admin_login";
