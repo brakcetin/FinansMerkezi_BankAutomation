@@ -92,116 +92,116 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="admin_login.cs">
+    <Compile Include="Giriş\admin_login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="admin_login.Designer.cs">
+    <Compile Include="Giriş\admin_login.Designer.cs">
       <DependentUpon>admin_login.cs</DependentUpon>
     </Compile>
-    <Compile Include="allUsers.cs">
+    <Compile Include="Hesap İşlemleri\allUsers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="allUsers.Designer.cs">
+    <Compile Include="Hesap İşlemleri\allUsers.Designer.cs">
       <DependentUpon>allUsers.cs</DependentUpon>
     </Compile>
-    <Compile Include="balanceSheet.cs">
+    <Compile Include="Görüntüle\balanceSheet.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="balanceSheet.Designer.cs">
+    <Compile Include="Görüntüle\balanceSheet.Designer.cs">
       <DependentUpon>balanceSheet.cs</DependentUpon>
     </Compile>
-    <Compile Include="changePass.cs">
+    <Compile Include="Diğer\changePass.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="changePass.Designer.cs">
+    <Compile Include="Diğer\changePass.Designer.cs">
       <DependentUpon>changePass.cs</DependentUpon>
     </Compile>
-    <Compile Include="createAdmin.cs">
+    <Compile Include="Diğer\createAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="createAdmin.Designer.cs">
+    <Compile Include="Diğer\createAdmin.Designer.cs">
       <DependentUpon>createAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="DataBaseHelper.cs" />
-    <Compile Include="creditForm.cs">
+    <Compile Include="İşlemler\creditForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="creditForm.Designer.cs">
+    <Compile Include="İşlemler\creditForm.Designer.cs">
       <DependentUpon>creditForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="fdForm.cs">
+    <Compile Include="İşlemler\fdForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fdForm.Designer.cs">
+    <Compile Include="İşlemler\fdForm.Designer.cs">
       <DependentUpon>fdForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Informations.cs" />
-    <Compile Include="Menu.cs">
+    <Compile Include="Menü\Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menu.Designer.cs">
+    <Compile Include="Menü\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="newAccount.cs">
+    <Compile Include="Hesap İşlemleri\newAccount.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="newAccount.Designer.cs">
+    <Compile Include="Hesap İşlemleri\newAccount.Designer.cs">
       <DependentUpon>newAccount.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="transferForm.cs">
+    <Compile Include="İşlemler\transferForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="transferForm.Designer.cs">
+    <Compile Include="İşlemler\transferForm.Designer.cs">
       <DependentUpon>transferForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="updateForm.cs">
+    <Compile Include="Hesap İşlemleri\updateForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="updateForm.Designer.cs">
+    <Compile Include="Hesap İşlemleri\updateForm.Designer.cs">
       <DependentUpon>updateForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="viewFD.cs">
+    <Compile Include="Görüntüle\viewFD.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="viewFD.Designer.cs">
+    <Compile Include="Görüntüle\viewFD.Designer.cs">
       <DependentUpon>viewFD.cs</DependentUpon>
     </Compile>
-    <Compile Include="debitForm.cs">
+    <Compile Include="İşlemler\debitForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="debitForm.Designer.cs">
+    <Compile Include="İşlemler\debitForm.Designer.cs">
       <DependentUpon>debitForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="admin_login.resx">
+    <EmbeddedResource Include="Giriş\admin_login.resx">
       <DependentUpon>admin_login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="allUsers.resx">
+    <EmbeddedResource Include="Hesap İşlemleri\allUsers.resx">
       <DependentUpon>allUsers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="balanceSheet.resx">
+    <EmbeddedResource Include="Görüntüle\balanceSheet.resx">
       <DependentUpon>balanceSheet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="changePass.resx">
+    <EmbeddedResource Include="Diğer\changePass.resx">
       <DependentUpon>changePass.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="createAdmin.resx">
+    <EmbeddedResource Include="Diğer\createAdmin.resx">
       <DependentUpon>createAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="creditForm.resx">
+    <EmbeddedResource Include="İşlemler\creditForm.resx">
       <DependentUpon>creditForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="debitForm.resx">
+    <EmbeddedResource Include="İşlemler\debitForm.resx">
       <DependentUpon>debitForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fdForm.resx">
+    <EmbeddedResource Include="İşlemler\fdForm.resx">
       <DependentUpon>fdForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menu.resx">
+    <EmbeddedResource Include="Menü\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="newAccount.resx">
+    <EmbeddedResource Include="Hesap İşlemleri\newAccount.resx">
       <DependentUpon>newAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -212,14 +212,15 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="transferForm.resx">
+    <EmbeddedResource Include="İşlemler\transferForm.resx">
       <DependentUpon>transferForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="updateForm.resx">
+    <EmbeddedResource Include="Hesap İşlemleri\updateForm.resx">
       <DependentUpon>updateForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="viewFD.resx">
+    <EmbeddedResource Include="Görüntüle\viewFD.resx">
       <DependentUpon>viewFD.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -235,6 +236,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resimler\Fm.jpg" />
+    <Content Include="Resimler\LOGO.ico" />
+    <Content Include="Resimler\LOGO.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
