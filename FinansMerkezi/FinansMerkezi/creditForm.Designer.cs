@@ -123,7 +123,7 @@
             this.accnoTxt.Location = new System.Drawing.Point(248, 129);
             this.accnoTxt.Name = "accnoTxt";
             this.accnoTxt.Size = new System.Drawing.Size(263, 24);
-            this.accnoTxt.TabIndex = 7;
+            this.accnoTxt.TabIndex = 0;
             // 
             // nameTxt
             // 
@@ -157,7 +157,7 @@
             this.damountTxt.Location = new System.Drawing.Point(248, 390);
             this.damountTxt.Name = "damountTxt";
             this.damountTxt.Size = new System.Drawing.Size(263, 24);
-            this.damountTxt.TabIndex = 11;
+            this.damountTxt.TabIndex = 3;
             // 
             // modecomboBox
             // 
@@ -168,7 +168,7 @@
             this.modecomboBox.Location = new System.Drawing.Point(248, 322);
             this.modecomboBox.Name = "modecomboBox";
             this.modecomboBox.Size = new System.Drawing.Size(263, 26);
-            this.modecomboBox.TabIndex = 12;
+            this.modecomboBox.TabIndex = 2;
             // 
             // detailsBtn
             // 
@@ -179,7 +179,7 @@
             this.detailsBtn.Location = new System.Drawing.Point(551, 119);
             this.detailsBtn.Name = "detailsBtn";
             this.detailsBtn.Size = new System.Drawing.Size(131, 38);
-            this.detailsBtn.TabIndex = 13;
+            this.detailsBtn.TabIndex = 1;
             this.detailsBtn.Text = "Detayları Göster";
             this.detailsBtn.UseVisualStyleBackColor = true;
             this.detailsBtn.Click += new System.EventHandler(this.detailsBtn_Click);
@@ -193,7 +193,7 @@
             this.updateBtn.Location = new System.Drawing.Point(248, 441);
             this.updateBtn.Name = "updateBtn";
             this.updateBtn.Size = new System.Drawing.Size(123, 46);
-            this.updateBtn.TabIndex = 14;
+            this.updateBtn.TabIndex = 4;
             this.updateBtn.Text = "Kaydet";
             this.updateBtn.UseVisualStyleBackColor = true;
             this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);

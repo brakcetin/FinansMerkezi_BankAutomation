@@ -33,7 +33,7 @@ namespace FinansMerkezi
 
             if (string.IsNullOrEmpty(userTxt.Text) == true || string.IsNullOrEmpty(passTxt.Text) == true)
             {
-                MessageBox.Show("Alanlar boş bırakılamaz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
             else
             {

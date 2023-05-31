@@ -66,7 +66,7 @@
             this.saveBtn.Location = new System.Drawing.Point(248, 441);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(123, 46);
-            this.saveBtn.TabIndex = 55;
+            this.saveBtn.TabIndex = 4;
             this.saveBtn.Text = "Kaydet";
             this.saveBtn.UseVisualStyleBackColor = true;
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
@@ -79,7 +79,7 @@
             this.amountTxt.Location = new System.Drawing.Point(248, 390);
             this.amountTxt.Name = "amountTxt";
             this.amountTxt.Size = new System.Drawing.Size(263, 24);
-            this.amountTxt.TabIndex = 54;
+            this.amountTxt.TabIndex = 3;
             // 
             // accnoTxt
             // 
@@ -89,7 +89,7 @@
             this.accnoTxt.Location = new System.Drawing.Point(248, 129);
             this.accnoTxt.Name = "accnoTxt";
             this.accnoTxt.Size = new System.Drawing.Size(263, 24);
-            this.accnoTxt.TabIndex = 53;
+            this.accnoTxt.TabIndex = 0;
             // 
             // dateLabel
             // 
@@ -170,7 +170,7 @@
             this.detailsBtn.Location = new System.Drawing.Point(551, 119);
             this.detailsBtn.Name = "detailsBtn";
             this.detailsBtn.Size = new System.Drawing.Size(131, 38);
-            this.detailsBtn.TabIndex = 59;
+            this.detailsBtn.TabIndex = 1;
             this.detailsBtn.Text = "Detayları Göster";
             this.detailsBtn.UseVisualStyleBackColor = true;
             this.detailsBtn.Click += new System.EventHandler(this.detailsBtn_Click);
@@ -196,7 +196,7 @@
             this.modecomboBox.Location = new System.Drawing.Point(248, 322);
             this.modecomboBox.Name = "modecomboBox";
             this.modecomboBox.Size = new System.Drawing.Size(263, 26);
-            this.modecomboBox.TabIndex = 62;
+            this.modecomboBox.TabIndex = 2;
             // 
             // debitForm
             // 

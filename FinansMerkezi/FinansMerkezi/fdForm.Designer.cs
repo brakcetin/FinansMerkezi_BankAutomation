@@ -52,7 +52,7 @@
             this.periodTxt.Location = new System.Drawing.Point(248, 325);
             this.periodTxt.Name = "periodTxt";
             this.periodTxt.Size = new System.Drawing.Size(263, 24);
-            this.periodTxt.TabIndex = 2;
+            this.periodTxt.TabIndex = 3;
             // 
             // saveBtn
             // 
@@ -63,7 +63,7 @@
             this.saveBtn.Location = new System.Drawing.Point(248, 441);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(123, 46);
-            this.saveBtn.TabIndex = 4;
+            this.saveBtn.TabIndex = 5;
             this.saveBtn.Text = "Save";
             this.saveBtn.UseVisualStyleBackColor = true;
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
@@ -76,7 +76,7 @@
             this.interestTxt.Location = new System.Drawing.Point(248, 390);
             this.interestTxt.Name = "interestTxt";
             this.interestTxt.Size = new System.Drawing.Size(263, 24);
-            this.interestTxt.TabIndex = 3;
+            this.interestTxt.TabIndex = 4;
             // 
             // accnoTxt
             // 
@@ -167,7 +167,7 @@
             this.modecomboBox.Location = new System.Drawing.Point(248, 192);
             this.modecomboBox.Name = "modecomboBox";
             this.modecomboBox.Size = new System.Drawing.Size(263, 26);
-            this.modecomboBox.TabIndex = 44;
+            this.modecomboBox.TabIndex = 1;
             // 
             // lirasTxt
             // 
@@ -177,7 +177,7 @@
             this.lirasTxt.Location = new System.Drawing.Point(248, 260);
             this.lirasTxt.Name = "lirasTxt";
             this.lirasTxt.Size = new System.Drawing.Size(263, 24);
-            this.lirasTxt.TabIndex = 1;
+            this.lirasTxt.TabIndex = 2;
             // 
             // fdForm
             // 
