@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(admin_login));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -35,13 +36,16 @@
             this.passTxt = new System.Windows.Forms.TextBox();
             this.login_btn = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(248, 192);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(229)))), ((int)(((byte)(156)))));
+            this.label1.Location = new System.Drawing.Point(248, 275);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 18);
             this.label1.TabIndex = 0;
@@ -51,7 +55,8 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(248, 246);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(229)))), ((int)(((byte)(156)))));
+            this.label2.Location = new System.Drawing.Point(248, 329);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 18);
             this.label2.TabIndex = 1;
@@ -61,7 +66,8 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(338, 119);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(229)))), ((int)(((byte)(156)))));
+            this.label3.Location = new System.Drawing.Point(338, 215);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(128, 25);
             this.label3.TabIndex = 2;
@@ -69,16 +75,22 @@
             // 
             // userTxt
             // 
+            this.userTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(40)))), ((int)(((byte)(46)))));
+            this.userTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.userTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userTxt.Location = new System.Drawing.Point(372, 186);
+            this.userTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(229)))), ((int)(((byte)(156)))));
+            this.userTxt.Location = new System.Drawing.Point(372, 269);
             this.userTxt.Name = "userTxt";
             this.userTxt.Size = new System.Drawing.Size(181, 24);
             this.userTxt.TabIndex = 3;
             // 
             // passTxt
             // 
+            this.passTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(40)))), ((int)(((byte)(46)))));
+            this.passTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.passTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passTxt.Location = new System.Drawing.Point(372, 240);
+            this.passTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(229)))), ((int)(((byte)(156)))));
+            this.passTxt.Location = new System.Drawing.Point(372, 323);
             this.passTxt.Name = "passTxt";
             this.passTxt.PasswordChar = '*';
             this.passTxt.Size = new System.Drawing.Size(181, 24);
@@ -86,13 +98,18 @@
             // 
             // login_btn
             // 
+            this.login_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(229)))), ((int)(((byte)(156)))));
+            this.login_btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(40)))), ((int)(((byte)(46)))));
+            this.login_btn.FlatAppearance.BorderSize = 3;
+            this.login_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.login_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.login_btn.Location = new System.Drawing.Point(251, 303);
+            this.login_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(40)))), ((int)(((byte)(46)))));
+            this.login_btn.Location = new System.Drawing.Point(251, 386);
             this.login_btn.Name = "login_btn";
             this.login_btn.Size = new System.Drawing.Size(302, 36);
             this.login_btn.TabIndex = 5;
             this.login_btn.Text = "Giriş";
-            this.login_btn.UseVisualStyleBackColor = true;
+            this.login_btn.UseVisualStyleBackColor = false;
             this.login_btn.Click += new System.EventHandler(this.login_btn_Click);
             // 
             // label4
@@ -100,28 +117,44 @@
             this.label4.AutoSize = true;
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label4.Font = new System.Drawing.Font("Georgia", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(148, 30);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(229)))), ((int)(((byte)(156)))));
+            this.label4.Location = new System.Drawing.Point(147, 30);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(510, 60);
             this.label4.TabIndex = 6;
             this.label4.Text = "FİNANS MERKEZİ";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(362, 115);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(80, 80);
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
             // 
             // admin_login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.ClientSize = new System.Drawing.Size(800, 511);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.passTxt);
             this.Controls.Add(this.userTxt);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.login_btn);
-            this.Controls.Add(this.label3);
+            this.ForeColor = System.Drawing.Color.Black;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "admin_login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Finans Merkezi";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -136,6 +169,7 @@
         private System.Windows.Forms.TextBox passTxt;
         private System.Windows.Forms.Button login_btn;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

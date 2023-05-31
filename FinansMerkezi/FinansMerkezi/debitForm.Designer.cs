@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(debitForm));
             this.blncTxt = new System.Windows.Forms.TextBox();
             this.saveBtn = new System.Windows.Forms.Button();
             this.amountTxt = new System.Windows.Forms.TextBox();
@@ -46,6 +47,8 @@
             // 
             // blncTxt
             // 
+            this.blncTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(189)))), ((int)(((byte)(128)))));
+            this.blncTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.blncTxt.Enabled = false;
             this.blncTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.blncTxt.Location = new System.Drawing.Point(248, 260);
@@ -56,6 +59,9 @@
             // 
             // saveBtn
             // 
+            this.saveBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(40)))), ((int)(((byte)(46)))));
+            this.saveBtn.FlatAppearance.BorderSize = 2;
+            this.saveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveBtn.Location = new System.Drawing.Point(248, 441);
             this.saveBtn.Name = "saveBtn";
@@ -67,6 +73,8 @@
             // 
             // amountTxt
             // 
+            this.amountTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(189)))), ((int)(((byte)(128)))));
+            this.amountTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.amountTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.amountTxt.Location = new System.Drawing.Point(248, 390);
             this.amountTxt.Name = "amountTxt";
@@ -75,6 +83,8 @@
             // 
             // accnoTxt
             // 
+            this.accnoTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(189)))), ((int)(((byte)(128)))));
+            this.accnoTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.accnoTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accnoTxt.Location = new System.Drawing.Point(248, 129);
             this.accnoTxt.Name = "accnoTxt";
@@ -153,6 +163,9 @@
             // 
             // detailsBtn
             // 
+            this.detailsBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(40)))), ((int)(((byte)(46)))));
+            this.detailsBtn.FlatAppearance.BorderSize = 2;
+            this.detailsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.detailsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.detailsBtn.Location = new System.Drawing.Point(551, 119);
             this.detailsBtn.Name = "detailsBtn";
@@ -164,6 +177,8 @@
             // 
             // nameTxt
             // 
+            this.nameTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(189)))), ((int)(((byte)(128)))));
+            this.nameTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.nameTxt.Enabled = false;
             this.nameTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameTxt.Location = new System.Drawing.Point(248, 195);
@@ -174,6 +189,8 @@
             // 
             // modecomboBox
             // 
+            this.modecomboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(189)))), ((int)(((byte)(128)))));
+            this.modecomboBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.modecomboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.modecomboBox.FormattingEnabled = true;
             this.modecomboBox.Location = new System.Drawing.Point(248, 322);
@@ -186,6 +203,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(229)))), ((int)(((byte)(156)))));
             this.ClientSize = new System.Drawing.Size(895, 564);
             this.Controls.Add(this.modecomboBox);
             this.Controls.Add(this.nameTxt);
@@ -201,6 +219,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "debitForm";
             this.Text = "Para Çekme";
             this.ResumeLayout(false);

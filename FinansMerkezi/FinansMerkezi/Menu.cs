@@ -17,6 +17,7 @@ namespace FinansMerkezi
             InitializeComponent();
         }
 
+
         private void yeniHesapEkleToolStripMenuItem_Click(object sender, EventArgs e)
         {
             newAccount newacc = new newAccount();

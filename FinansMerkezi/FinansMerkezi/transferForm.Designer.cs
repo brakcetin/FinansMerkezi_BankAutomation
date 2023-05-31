@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(transferForm));
             this.sentBtn = new System.Windows.Forms.Button();
             this.detailsBtn = new System.Windows.Forms.Button();
             this.toamountTxt = new System.Windows.Forms.TextBox();
@@ -46,63 +47,83 @@
             // 
             // sentBtn
             // 
-            this.sentBtn.Location = new System.Drawing.Point(248, 443);
+            this.sentBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(40)))), ((int)(((byte)(46)))));
+            this.sentBtn.FlatAppearance.BorderSize = 2;
+            this.sentBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sentBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sentBtn.Location = new System.Drawing.Point(273, 443);
             this.sentBtn.Name = "sentBtn";
             this.sentBtn.Size = new System.Drawing.Size(123, 46);
-            this.sentBtn.TabIndex = 28;
+            this.sentBtn.TabIndex = 6;
             this.sentBtn.Text = "Gönder";
             this.sentBtn.UseVisualStyleBackColor = true;
             this.sentBtn.Click += new System.EventHandler(this.sentBtn_Click);
             // 
             // detailsBtn
             // 
-            this.detailsBtn.Location = new System.Drawing.Point(551, 119);
+            this.detailsBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(40)))), ((int)(((byte)(46)))));
+            this.detailsBtn.FlatAppearance.BorderSize = 2;
+            this.detailsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.detailsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.detailsBtn.Location = new System.Drawing.Point(576, 119);
             this.detailsBtn.Name = "detailsBtn";
             this.detailsBtn.Size = new System.Drawing.Size(131, 38);
-            this.detailsBtn.TabIndex = 27;
+            this.detailsBtn.TabIndex = 1;
             this.detailsBtn.Text = "Detayları Göster";
             this.detailsBtn.UseVisualStyleBackColor = true;
             this.detailsBtn.Click += new System.EventHandler(this.detailsBtn_Click);
             // 
             // toamountTxt
             // 
-            this.toamountTxt.Location = new System.Drawing.Point(248, 390);
+            this.toamountTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(189)))), ((int)(((byte)(128)))));
+            this.toamountTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.toamountTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toamountTxt.Location = new System.Drawing.Point(273, 390);
             this.toamountTxt.Name = "toamountTxt";
-            this.toamountTxt.Size = new System.Drawing.Size(263, 22);
-            this.toamountTxt.TabIndex = 25;
+            this.toamountTxt.Size = new System.Drawing.Size(263, 24);
+            this.toamountTxt.TabIndex = 5;
             // 
             // blncTxt
             // 
+            this.blncTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(189)))), ((int)(((byte)(128)))));
+            this.blncTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.blncTxt.Enabled = false;
-            this.blncTxt.Location = new System.Drawing.Point(248, 263);
+            this.blncTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.blncTxt.Location = new System.Drawing.Point(273, 263);
             this.blncTxt.Name = "blncTxt";
             this.blncTxt.ReadOnly = true;
-            this.blncTxt.Size = new System.Drawing.Size(263, 22);
-            this.blncTxt.TabIndex = 24;
+            this.blncTxt.Size = new System.Drawing.Size(263, 24);
+            this.blncTxt.TabIndex = 3;
             // 
             // nameTxt
             // 
+            this.nameTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(189)))), ((int)(((byte)(128)))));
+            this.nameTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.nameTxt.Enabled = false;
-            this.nameTxt.Location = new System.Drawing.Point(248, 195);
+            this.nameTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameTxt.Location = new System.Drawing.Point(273, 195);
             this.nameTxt.Name = "nameTxt";
             this.nameTxt.ReadOnly = true;
-            this.nameTxt.Size = new System.Drawing.Size(263, 22);
-            this.nameTxt.TabIndex = 23;
+            this.nameTxt.Size = new System.Drawing.Size(263, 24);
+            this.nameTxt.TabIndex = 2;
             // 
             // fromaccnoTxt
             // 
-            this.fromaccnoTxt.Location = new System.Drawing.Point(248, 129);
+            this.fromaccnoTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(189)))), ((int)(((byte)(128)))));
+            this.fromaccnoTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.fromaccnoTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fromaccnoTxt.Location = new System.Drawing.Point(273, 129);
             this.fromaccnoTxt.Name = "fromaccnoTxt";
-            this.fromaccnoTxt.Size = new System.Drawing.Size(263, 22);
-            this.fromaccnoTxt.TabIndex = 22;
+            this.fromaccnoTxt.Size = new System.Drawing.Size(263, 24);
+            this.fromaccnoTxt.TabIndex = 0;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(418, 61);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(418, 55);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 25);
+            this.label2.Size = new System.Drawing.Size(102, 31);
             this.label2.TabIndex = 16;
             this.label2.Text = ".../.../...";
             // 
@@ -119,60 +140,69 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(45, 396);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(130, 16);
+            this.label7.Size = new System.Drawing.Size(145, 18);
             this.label7.TabIndex = 21;
             this.label7.Text = "Gönderilecek Miktar:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(45, 331);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(188, 16);
+            this.label6.Size = new System.Drawing.Size(207, 18);
             this.label6.TabIndex = 20;
             this.label6.Text = "Göndrilecek Hesap Numarası:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(45, 266);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 16);
+            this.label5.Size = new System.Drawing.Size(56, 18);
             this.label5.TabIndex = 19;
             this.label5.Text = "Bakiye:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(45, 201);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(34, 16);
+            this.label4.Size = new System.Drawing.Size(39, 18);
             this.label4.TabIndex = 18;
             this.label4.Text = "İsim:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(45, 136);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(175, 16);
+            this.label3.Size = new System.Drawing.Size(193, 18);
             this.label3.TabIndex = 17;
             this.label3.Text = "Gönderen Hesap Numarası:";
             // 
             // toaccnoTxt
             // 
-            this.toaccnoTxt.Location = new System.Drawing.Point(248, 325);
+            this.toaccnoTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(189)))), ((int)(((byte)(128)))));
+            this.toaccnoTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.toaccnoTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toaccnoTxt.Location = new System.Drawing.Point(273, 325);
             this.toaccnoTxt.Name = "toaccnoTxt";
-            this.toaccnoTxt.Size = new System.Drawing.Size(263, 22);
-            this.toaccnoTxt.TabIndex = 29;
+            this.toaccnoTxt.Size = new System.Drawing.Size(263, 24);
+            this.toaccnoTxt.TabIndex = 4;
             // 
             // transferForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(229)))), ((int)(((byte)(156)))));
             this.ClientSize = new System.Drawing.Size(895, 564);
             this.Controls.Add(this.toaccnoTxt);
             this.Controls.Add(this.sentBtn);
@@ -188,6 +218,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "transferForm";
             this.Text = "Transfer İşlemleri";
             this.ResumeLayout(false);

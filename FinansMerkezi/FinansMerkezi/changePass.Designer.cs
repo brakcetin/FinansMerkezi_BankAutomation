@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(changePass));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -92,6 +93,8 @@
             // 
             // usrnmTxt
             // 
+            this.usrnmTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(189)))), ((int)(((byte)(128)))));
+            this.usrnmTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.usrnmTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usrnmTxt.Location = new System.Drawing.Point(219, 129);
             this.usrnmTxt.Name = "usrnmTxt";
@@ -100,6 +103,8 @@
             // 
             // repassTxt
             // 
+            this.repassTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(189)))), ((int)(((byte)(128)))));
+            this.repassTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.repassTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.repassTxt.Location = new System.Drawing.Point(219, 322);
             this.repassTxt.Name = "repassTxt";
@@ -109,6 +114,8 @@
             // 
             // newpassTxt
             // 
+            this.newpassTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(189)))), ((int)(((byte)(128)))));
+            this.newpassTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.newpassTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.newpassTxt.Location = new System.Drawing.Point(219, 261);
             this.newpassTxt.Name = "newpassTxt";
@@ -118,14 +125,20 @@
             // 
             // oldpassTxt
             // 
+            this.oldpassTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(189)))), ((int)(((byte)(128)))));
+            this.oldpassTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.oldpassTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.oldpassTxt.Location = new System.Drawing.Point(219, 195);
             this.oldpassTxt.Name = "oldpassTxt";
+            this.oldpassTxt.PasswordChar = '*';
             this.oldpassTxt.Size = new System.Drawing.Size(263, 24);
             this.oldpassTxt.TabIndex = 1;
             // 
             // saveBtn
             // 
+            this.saveBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(40)))), ((int)(((byte)(46)))));
+            this.saveBtn.FlatAppearance.BorderSize = 2;
+            this.saveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveBtn.Location = new System.Drawing.Point(219, 370);
             this.saveBtn.Name = "saveBtn";
@@ -140,6 +153,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(229)))), ((int)(((byte)(156)))));
             this.ClientSize = new System.Drawing.Size(895, 564);
             this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.oldpassTxt);
@@ -151,6 +165,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "changePass";
             this.Text = "Şifre Değiştir";
             this.ResumeLayout(false);

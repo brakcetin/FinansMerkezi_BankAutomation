@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(balanceSheet));
             this.blncLbl = new System.Windows.Forms.Label();
             this.accnoTxt = new System.Windows.Forms.TextBox();
             this.showBtn = new System.Windows.Forms.Button();
@@ -56,6 +57,8 @@
             // 
             // accnoTxt
             // 
+            this.accnoTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(189)))), ((int)(((byte)(128)))));
+            this.accnoTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.accnoTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accnoTxt.Location = new System.Drawing.Point(66, 151);
             this.accnoTxt.Name = "accnoTxt";
@@ -64,6 +67,9 @@
             // 
             // showBtn
             // 
+            this.showBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(40)))), ((int)(((byte)(46)))));
+            this.showBtn.FlatAppearance.BorderSize = 2;
+            this.showBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.showBtn.Location = new System.Drawing.Point(425, 139);
             this.showBtn.Name = "showBtn";
             this.showBtn.Size = new System.Drawing.Size(115, 47);
@@ -149,6 +155,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(229)))), ((int)(((byte)(156)))));
             this.ClientSize = new System.Drawing.Size(1902, 936);
             this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.dataGridView2);
@@ -160,6 +167,7 @@
             this.Controls.Add(this.showBtn);
             this.Controls.Add(this.accnoTxt);
             this.Controls.Add(this.blncLbl);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "balanceSheet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bilanço";

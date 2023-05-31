@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(createAdmin));
             this.saveBtn = new System.Windows.Forms.Button();
             this.passTxt = new System.Windows.Forms.TextBox();
             this.repassTxt = new System.Windows.Forms.TextBox();
@@ -40,39 +41,49 @@
             // 
             // saveBtn
             // 
+            this.saveBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(40)))), ((int)(((byte)(46)))));
+            this.saveBtn.FlatAppearance.BorderSize = 2;
+            this.saveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveBtn.Location = new System.Drawing.Point(219, 322);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(123, 46);
-            this.saveBtn.TabIndex = 13;
+            this.saveBtn.TabIndex = 3;
             this.saveBtn.Text = "Kaydet";
             this.saveBtn.UseVisualStyleBackColor = true;
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // passTxt
             // 
+            this.passTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(189)))), ((int)(((byte)(128)))));
+            this.passTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.passTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passTxt.Location = new System.Drawing.Point(219, 195);
             this.passTxt.Name = "passTxt";
+            this.passTxt.PasswordChar = '*';
             this.passTxt.Size = new System.Drawing.Size(263, 24);
-            this.passTxt.TabIndex = 7;
+            this.passTxt.TabIndex = 1;
             // 
             // repassTxt
             // 
+            this.repassTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(189)))), ((int)(((byte)(128)))));
+            this.repassTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.repassTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.repassTxt.Location = new System.Drawing.Point(219, 261);
             this.repassTxt.Name = "repassTxt";
             this.repassTxt.PasswordChar = '*';
             this.repassTxt.Size = new System.Drawing.Size(263, 24);
-            this.repassTxt.TabIndex = 9;
+            this.repassTxt.TabIndex = 2;
             // 
             // usrnmTxt
             // 
+            this.usrnmTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(189)))), ((int)(((byte)(128)))));
+            this.usrnmTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.usrnmTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usrnmTxt.Location = new System.Drawing.Point(219, 129);
             this.usrnmTxt.Name = "usrnmTxt";
             this.usrnmTxt.Size = new System.Drawing.Size(263, 24);
-            this.usrnmTxt.TabIndex = 5;
+            this.usrnmTxt.TabIndex = 0;
             // 
             // label1
             // 
@@ -119,6 +130,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(229)))), ((int)(((byte)(156)))));
             this.ClientSize = new System.Drawing.Size(895, 564);
             this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.passTxt);
@@ -128,6 +140,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "createAdmin";
             this.Text = "createAdmin";
             this.ResumeLayout(false);

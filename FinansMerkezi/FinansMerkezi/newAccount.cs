@@ -27,6 +27,7 @@ namespace FinansMerkezi
             loaddate();
             loadaccount();
             loadstate();
+
         }
 
         private void loadstate()
