@@ -121,6 +121,7 @@ namespace FinansMerkezi
                                 DataTable dataTable = new DataTable();
                                 dataTable.Load(reader);
                                 dataGridView1.DataSource = dataTable;
+                                ChangeNamesofColumns1();
                             }
                         }
                     }
@@ -156,6 +157,7 @@ namespace FinansMerkezi
                                 DataTable dataTable = new DataTable();
                                 dataTable.Load(reader);
                                 dataGridView2.DataSource = dataTable;
+                                ChangeNamesofColumns2();
                             }
                         }
                     }
@@ -191,6 +193,7 @@ namespace FinansMerkezi
                                 DataTable dataTable = new DataTable();
                                 dataTable.Load(reader);
                                 dataGridView3.DataSource = dataTable;
+                                ChangeNamesofColumns3();
                             }
                         }
                     }
@@ -226,6 +229,37 @@ namespace FinansMerkezi
             dataGridView3.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridView3.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridView3.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Regular);
+        }
+        //sütun adları veri tabanında ingilizce olduğu için türkçeye çevrilir
+        private void ChangeNamesofColumns1()
+        {
+            //para çekme
+            dataGridView1.Columns["AccountNo"].HeaderText = "Hesap Numarası";
+            dataGridView1.Columns["Name"].HeaderText = "Ad-Soyad";
+            dataGridView1.Columns["OldBalance"].HeaderText = "Bakiye";
+            dataGridView1.Columns["Mode"].HeaderText = "Para Çekme Yöntemi";
+            dataGridView1.Columns["DebAmount"].HeaderText = "Çekilen Miktar";
+            dataGridView1.Columns["Date"].HeaderText = "Tarih";
+        }
+        private void ChangeNamesofColumns2()
+        {
+            //para ekleme
+            dataGridView2.Columns["AccountNo"].HeaderText = "Hesap Numarası";
+            dataGridView2.Columns["Name"].HeaderText = "Ad-Soyad";
+            dataGridView2.Columns["OldBalance"].HeaderText = "Bakiye";
+            dataGridView2.Columns["Mode"].HeaderText = "Para Yatırma Yöntemi";
+            dataGridView2.Columns["DipAmount"].HeaderText = "Yatırılan Miktar";
+            dataGridView2.Columns["Date"].HeaderText = "Tarih";
+        }
+        private void ChangeNamesofColumns3()
+        {
+            //transfer
+            dataGridView3.Columns["account_no"].HeaderText = "Hesap Numarası";
+            dataGridView3.Columns["name"].HeaderText = "Ad-Soyad";
+            dataGridView3.Columns["first_balance"].HeaderText = "Bakiye";
+            dataGridView3.Columns["totransfer"].HeaderText = "Gönderilen Miktar";
+            dataGridView3.Columns["toaccount_no"].HeaderText = "Gönderilen Hesap Numarası";
+            dataGridView3.Columns["date"].HeaderText = "Tarih";
         }
     }
 }

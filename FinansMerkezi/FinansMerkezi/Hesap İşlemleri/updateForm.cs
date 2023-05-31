@@ -224,11 +224,11 @@ namespace FinansMerkezi
             }
         }
 
-
+        //sütun adları veri tabanında ingilizce olduğu için türkçeye çevrilir
         private void ChangeNamesofColumns()
         {
             dataGridView1.Columns["Account_No"].HeaderText = "Hesap Numarası";
-            dataGridView1.Columns["Name"].HeaderText = "İsim";
+            dataGridView1.Columns["Name"].HeaderText = "Ad-Soyad";
             dataGridView1.Columns["DateofBirth"].HeaderText = "Doğum Tarihi";
             dataGridView1.Columns["PhoneNo"].HeaderText = "Telefon Numarası";
             dataGridView1.Columns["Adress"].HeaderText = "Adres";

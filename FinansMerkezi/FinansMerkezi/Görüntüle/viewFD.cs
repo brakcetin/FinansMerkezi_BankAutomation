@@ -48,6 +48,7 @@ namespace FinansMerkezi
                             DataTable dataTable = new DataTable();
                             dataTable.Load(reader);
                             dataGridView1.DataSource = dataTable;
+                            ChangeNamesofColumns();
                         }
                     }
                 }
@@ -62,6 +63,19 @@ namespace FinansMerkezi
             //satır ve sütun genişliğini otomatik ayarlar
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridView1.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Regular);
+        }
+        //sütun adları veri tabanında ingilizce olduğu için türkçeye çevrilir
+        private void ChangeNamesofColumns()
+        {
+            //para çekme
+            dataGridView1.Columns["Account_No"].HeaderText = "Hesap Numarası";
+            dataGridView1.Columns["Liras"].HeaderText = "Yatırılacak Tutar (TL)";
+            dataGridView1.Columns["Period"].HeaderText = "Süre (gün)";
+            dataGridView1.Columns["Mode"].HeaderText = "Yöntem";
+            dataGridView1.Columns["Interest_rate"].HeaderText = "Faiz (%)";
+            dataGridView1.Columns["Maturity_date"].HeaderText = "Vade Sonu";
+            dataGridView1.Columns["Maturity_Amount"].HeaderText = "Vade Miktarı";
+            dataGridView1.Columns["Start_Date"].HeaderText = "Başlangış Tarihi";
         }
     }
 }
