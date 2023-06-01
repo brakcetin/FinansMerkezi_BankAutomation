@@ -61,6 +61,7 @@ namespace FinansMerkezi
                                     string password = reader.GetString(1);
                                 }
                                 ClearFormFields();
+                                this.Hide();
                                 Menu m1 = new Menu();
                                 m1.ShowDialog();
                             }
