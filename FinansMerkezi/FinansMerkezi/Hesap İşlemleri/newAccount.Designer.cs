@@ -81,22 +81,22 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(361, 84);
+            this.label2.Location = new System.Drawing.Point(347, 72);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 18);
+            this.label2.Size = new System.Drawing.Size(52, 20);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Tarih";
+            this.label2.Text = "Tarih:";
             // 
             // datelLbl
             // 
             this.datelLbl.AutoSize = true;
-            this.datelLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datelLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.datelLbl.ForeColor = System.Drawing.Color.Black;
-            this.datelLbl.Location = new System.Drawing.Point(446, 84);
+            this.datelLbl.Location = new System.Drawing.Point(405, 72);
             this.datelLbl.Name = "datelLbl";
-            this.datelLbl.Size = new System.Drawing.Size(74, 18);
+            this.datelLbl.Size = new System.Drawing.Size(86, 20);
             this.datelLbl.TabIndex = 2;
             this.datelLbl.Text = "DateLabel";
             // 
