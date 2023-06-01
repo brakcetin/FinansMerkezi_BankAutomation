@@ -171,6 +171,7 @@
             this.Name = "admin_login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Finans Merkezi";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.admin_login_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

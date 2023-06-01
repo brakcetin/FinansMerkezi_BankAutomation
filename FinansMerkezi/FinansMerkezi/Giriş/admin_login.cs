@@ -98,5 +98,13 @@ namespace FinansMerkezi
             pictureBox2.BackgroundImage = Properties.Resources.eye;
             passTxt.PasswordChar = '\0';
         }
+
+        private void admin_login_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                Application.Exit(); // Uygulamayı tamamen kapat
+            }
+        }
     }
 }

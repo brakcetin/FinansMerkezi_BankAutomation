@@ -84,6 +84,8 @@ namespace FinansMerkezi
         private void çıkışYapToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+            admin_login loginForm = new admin_login();
+            loginForm.Show();
         }
 
         private void şifreDeğiştirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -98,6 +100,12 @@ namespace FinansMerkezi
             createAdmin newAdmin = new createAdmin();
             newAdmin.MdiParent = this;
             newAdmin.Show();
+        }
+
+        private void Menu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            admin_login loginForm = new admin_login();
+            loginForm.Show();
         }
     }
 }
