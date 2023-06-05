@@ -259,13 +259,13 @@ namespace FinansMerkezi
         {
             string newaccountNo = accnoTxt.Text;
             name = nameTxt.Text;
-            CapitalizeFirstLetters(name);
+            name = CapitalizeFirstLetters(name);
             dateOfBirth = dateTimePicker1.Value.Date;
             phoneno = phoneTxt.Text;
             address = addressTxt.Text;
-            CapitalizeFirstLetters(address);
+            address = CapitalizeFirstLetters(address);
             district = distTxt.Text;
-            CapitalizeFirstLetters(district);
+            district = CapitalizeFirstLetters(district);
             profile = GetProfileBytes();
             comboBox1.SelectedItem = state;
 
