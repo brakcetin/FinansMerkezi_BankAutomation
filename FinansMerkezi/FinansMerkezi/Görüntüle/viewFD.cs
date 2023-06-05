@@ -24,7 +24,7 @@ namespace FinansMerkezi
             string searchDate = dateTimePicker1.Value.ToString("dd / MM / yyyy");
             if (string.IsNullOrEmpty(searchDate))
             {
-                MessageBox.Show("Lütfen bir tarih seçiniz!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lütfen bir tarih seçiniz!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             else

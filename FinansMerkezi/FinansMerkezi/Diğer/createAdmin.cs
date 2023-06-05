@@ -28,7 +28,7 @@ namespace FinansMerkezi
             //boş alan var mı diye kontrol eder
             if (string.IsNullOrEmpty(usrnmTxt.Text) || string.IsNullOrEmpty(passTxt.Text) || string.IsNullOrEmpty(repassTxt.Text))
             {
-                MessageBox.Show("Alanlar boş bırakılamaz!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Alanlar boş bırakılamaz!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             //tekrar girilen şifre ile uyum kontrolü

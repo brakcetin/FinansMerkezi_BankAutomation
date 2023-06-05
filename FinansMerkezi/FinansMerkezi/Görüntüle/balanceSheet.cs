@@ -63,12 +63,12 @@ namespace FinansMerkezi
                 //Hesap numarası yerine girilen değerin boş olup olmadığını kontrol eder
                 if (string.IsNullOrEmpty(accnoTxt.Text))
                 {
-                    MessageBox.Show("Detayları görmek için lütfen bir hesap numarası giriniz!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Detayları görmek için lütfen bir hesap numarası giriniz!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 if (!decimal.TryParse(accnoTxt.Text, out decimal accno))
                 {
-                    MessageBox.Show("Hesap numarası rakamlardan oluşmak zorundadır!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Hesap numarası rakamlardan oluşmak zorundadır!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 infos.AccountNo = accno;

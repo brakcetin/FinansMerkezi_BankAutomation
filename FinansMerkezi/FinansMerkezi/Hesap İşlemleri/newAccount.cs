@@ -77,7 +77,7 @@ namespace FinansMerkezi
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Hesap numarası oluşturulurken bir hata oluştu: " + ex.Message);
+                    MessageBox.Show("Hesap numarası oluşturulurken bir hata oluştu: " + ex.Message,"Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 
@@ -147,7 +147,7 @@ namespace FinansMerkezi
     profile == null || string.IsNullOrEmpty(motherName) || string.IsNullOrEmpty(fatherName) ||
     string.IsNullOrEmpty(balanceText) || string.IsNullOrEmpty(gender) || string.IsNullOrEmpty(m_stat))
             {
-                MessageBox.Show("Alanlar boş bırakılamaz", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Alanlar boş bırakılamaz", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             else
@@ -155,7 +155,7 @@ namespace FinansMerkezi
                 state = comboBox1.SelectedItem.ToString();
                 if (!IsPhoneNumberValid(phoneNo))
                 {
-                    MessageBox.Show("Lütfen 10 haneli geçerli bir telefon numarası girin.");
+                    MessageBox.Show("Lütfen 10 haneli geçerli bir telefon numarası girin.","Uyarı!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     phoneTxt.Focus(); // Metin kutusuna odaklanma
                     phoneTxt.SelectAll(); // Tüm metni seçme
                     return;
@@ -163,7 +163,7 @@ namespace FinansMerkezi
 
                 if (!decimal.TryParse(balanceText, out decimal balance))
                 {
-                    MessageBox.Show("Lütfen geçerli bir bakiye girin.");
+                    MessageBox.Show("Lütfen geçerli bir bakiye girin.","Hata!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     blncTxt.Focus(); // Metin kutusuna odaklanma
                     blncTxt.SelectAll(); // Tüm metni seçme
                     return; // İşlemi sonlandırma
@@ -196,17 +196,17 @@ namespace FinansMerkezi
                         int rowsAffected = command.ExecuteNonQuery();
                         if (rowsAffected > 0)
                         {
-                            MessageBox.Show("Yeni hesap başarıyla kaydedildi.");
+                            MessageBox.Show("Yeni hesap başarıyla kaydedildi.","", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             ClearFormFields();
                         }
                         else
                         {
-                            MessageBox.Show("Hesap kaydedilirken bir hata oluştu.");
+                            MessageBox.Show("Hesap kaydedilirken bir hata oluştu.","Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Hesap kaydedilirken bir hata oluştu: " + ex.Message);
+                        MessageBox.Show("Hesap kaydedilirken bir hata oluştu: " + ex.Message,"Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }

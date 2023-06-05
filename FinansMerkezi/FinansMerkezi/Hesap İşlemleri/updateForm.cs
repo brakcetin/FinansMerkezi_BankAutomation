@@ -72,12 +72,12 @@ namespace FinansMerkezi
             //Hesap numarası yerine girilen değerin boş olup olmadığını kontrol eder
             if (string.IsNullOrEmpty(accnoTxt.Text))
             {
-                MessageBox.Show("Detayları görmek için lütfen bir hesap numarası giriniz!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Detayları görmek için lütfen bir hesap numarası giriniz!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (!decimal.TryParse(accnoTxt.Text, out decimal accno))
             {
-                MessageBox.Show("Hesap numarası rakamlardan oluşmak zorundadır!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Hesap numarası rakamlardan oluşmak zorundadır!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -106,7 +106,7 @@ namespace FinansMerkezi
             //Ad-Soyad yerine girilen değerin boş olup olmadığını kontrol eder
             if (string.IsNullOrEmpty(nameTxt.Text))
             {
-                MessageBox.Show("Detayları görmek için Ad-Soyad bilgilerinizi giriniz!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Detayları görmek için Ad-Soyad bilgilerinizi giriniz!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -292,21 +292,21 @@ namespace FinansMerkezi
     string.IsNullOrEmpty(address) || string.IsNullOrEmpty(district) || comboBox1.SelectedItem == null ||
     profile == null || string.IsNullOrEmpty(gender) || string.IsNullOrEmpty(m_stat))
             {
-                MessageBox.Show("Alanlar boş bırakılamaz", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Alanlar boş bırakılamaz", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             else
             {
                 if (accountNo != newaccountNo)
                 {
-                    MessageBox.Show("Hesap numarası değiştirilemez.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Hesap numarası değiştirilemez.", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return; // Hata durumunda işlemi sonlandırır
                 }
 
                 state = comboBox1.SelectedItem.ToString();
                 if (!IsPhoneNumberValid(phoneno))
                 {
-                    MessageBox.Show("Lütfen geçerli bir telefon numarası girin.");
+                    MessageBox.Show("Lütfen geçerli bir telefon numarası girin.","Hata!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     phoneTxt.Focus(); // Metin kutusuna odaklanma
                     phoneTxt.SelectAll(); // Tüm metni seçme
                     return;
@@ -411,11 +411,11 @@ namespace FinansMerkezi
 
                             if (rowsAffected > 0)
                             {
-                                MessageBox.Show("Kullanıcı başarıyla silindi.");
+                                MessageBox.Show("Kullanıcı başarıyla silindi.","", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                             else
                             {
-                                MessageBox.Show("Kullanıcı silinirken bir hata oluştu.");
+                                MessageBox.Show("Kullanıcı silinirken bir hata oluştu.","Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                     }
@@ -423,7 +423,7 @@ namespace FinansMerkezi
             }
             else
             {
-                MessageBox.Show("Lütfen silmek istediğiniz kullanıcıyı seçin.", "Kullanıcı Silme", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Lütfen silmek istediğiniz kullanıcıyı seçin.", "Kullanıcı Silme", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

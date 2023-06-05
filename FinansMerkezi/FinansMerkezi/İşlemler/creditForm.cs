@@ -49,12 +49,12 @@ namespace FinansMerkezi
                 //Hesap numarası yerine girilen değerin boş olup olmadığını kontrol eder
                 if (string.IsNullOrEmpty(accnoTxt.Text))
                 {
-                    MessageBox.Show("Detayları görmek için lütfen bir hesap numarası giriniz!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Detayları görmek için lütfen bir hesap numarası giriniz!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 if (!decimal.TryParse(accnoTxt.Text, out decimal accno))
                 {
-                    MessageBox.Show("Hesap numarası rakamlardan oluşmak zorundadır!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Hesap numarası rakamlardan oluşmak zorundadır!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 infos.AccountNo = accno;
@@ -105,12 +105,12 @@ namespace FinansMerkezi
             else
             {
                 // ComboBox'ta seçili bir öğe yoksa uygulanacak işlem
-                MessageBox.Show("Alanlar boş bırakılamaz!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Alanlar boş bırakılamaz!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (string.IsNullOrEmpty(accnoTxt.Text) || string.IsNullOrEmpty(damountTxt.Text))
             {
-                MessageBox.Show("Alanlar boş bırakılamaz!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Alanlar boş bırakılamaz!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             else
@@ -119,13 +119,13 @@ namespace FinansMerkezi
                 new_accno = Convert.ToDecimal(accnoTxt.Text);
                 if (infos.AccountNo != new_accno)
                 {
-                    MessageBox.Show("Hesap numarası değiştirilemez.", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Hesap numarası değiştirilemez.", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return; // Hata durumunda işlemi sonlandırır
                 }
                 //yatırılacak tutara sadece sayı girilsin istiyorum
                 if (!decimal.TryParse(damountTxt.Text, out decimal depamount))
                 {
-                    MessageBox.Show("Alanlar boş bırakılamaz!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Alanlar boş bırakılamaz!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
@@ -175,7 +175,7 @@ namespace FinansMerkezi
                             }
                             else
                             {
-                                MessageBox.Show("Yatırım işlemi gerçekleştirilemedi.", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Yatırım işlemi gerçekleştirilemedi.", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             }
                         }
                         catch (Exception ex)

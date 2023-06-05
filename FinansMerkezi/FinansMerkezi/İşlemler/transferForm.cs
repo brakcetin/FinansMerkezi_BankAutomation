@@ -40,12 +40,12 @@ namespace FinansMerkezi
                 //Hesap numarası yerine girilen değerin boş olup olmadığını kontrol eder
                 if (string.IsNullOrEmpty(fromaccnoTxt.Text))
                 {
-                    MessageBox.Show("Detayları görmek için lütfen bir hesap numarası giriniz!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Detayları görmek için lütfen bir hesap numarası giriniz!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 if (!decimal.TryParse(fromaccnoTxt.Text, out decimal accno))
                 {
-                    MessageBox.Show("Hesap numarası rakamlardan oluşmak zorundadır!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Hesap numarası rakamlardan oluşmak zorundadır!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 infos.AccountNo = accno;
@@ -69,7 +69,7 @@ namespace FinansMerkezi
                             }
                             else
                             {
-                                MessageBox.Show("Hesap numaranız bulunamadı", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Hesap numaranız bulunamadı!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                 return;
                             }
                         }
@@ -96,24 +96,24 @@ namespace FinansMerkezi
             //alanlar boş bırakıldığı durumda hata verir
             if (!decimal.TryParse(fromaccnoTxt.Text, out new_fromaccno))
             {
-                MessageBox.Show("Alanlar boş bırakılamaz!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Alanlar boş bırakılamaz!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (!decimal.TryParse(toamountTxt.Text, out toamount))
             {
-                MessageBox.Show("Alanlar boş bırakılamaz!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Alanlar boş bırakılamaz!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (string.IsNullOrEmpty(toaccno))
             {
-                MessageBox.Show("Alanlar boş bırakılamaz!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Alanlar boş bırakılamaz!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             else
             {
                 if (infos.AccountNo != new_fromaccno)
                 {
-                    MessageBox.Show("Hesap numarası değiştirilemez.", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Hesap numarası değiştirilemez!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return; // Hata durumunda işlemi sonlandırır
                 }
                 if (infos.Balance >= toamount)
@@ -170,7 +170,7 @@ namespace FinansMerkezi
                             }
                             else //hesap yoksa hata verir
                             {
-                                MessageBox.Show("Alıcı hesap bulunamadı", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Alıcı hesap bulunamadı!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                 return;
                             }
 
@@ -200,7 +200,7 @@ namespace FinansMerkezi
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Transfer işlemi gerçekleştirilemedi.", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    MessageBox.Show("Transfer işlemi gerçekleştirilemedi!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                     return;
                                 }
                             }

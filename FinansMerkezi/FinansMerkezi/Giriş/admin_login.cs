@@ -67,13 +67,13 @@ namespace FinansMerkezi
                             }
                             else
                             {
-                                MessageBox.Show("Yanlış kullanıcı adı ya da şifre girdiniz!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Yanlış kullanıcı adı ya da şifre girdiniz!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             }
                         }
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Hata oluştu: " + ex.Message);
+                        MessageBox.Show("Hata oluştu: " + ex.Message, "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
 

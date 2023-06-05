@@ -48,13 +48,13 @@ namespace FinansMerkezi
             else
             {
                 // ComboBox'ta seçili bir öğe yoksa uygulanacak işlem
-                MessageBox.Show("Alanlar boş bırakılamaz!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Alanlar boş bırakılamaz!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             
             if (string.IsNullOrEmpty(period_txt) || string.IsNullOrEmpty(liras_txt) || string.IsNullOrEmpty(interest_txt) || string.IsNullOrEmpty(accnotxt))
             {
-                MessageBox.Show("Alanlar boş bırakılamaz!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Alanlar boş bırakılamaz!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             else
@@ -62,7 +62,7 @@ namespace FinansMerkezi
                 //veri setinde bulunan bir hesap numarası girilmiş mi diye kontrol eder
                 if (accnotxt == "1000000000")
                 {
-                    MessageBox.Show("Geçersiz hesap numarası", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Geçersiz hesap numarası!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 if (decimal.TryParse(accnoTxt.Text, out decimal accno)) //veri setinde bulunan bir hesap numarası girilmiş mi diye kontrol eder
@@ -84,7 +84,7 @@ namespace FinansMerkezi
 
                             if (accountCount == 0)
                             {
-                                MessageBox.Show("Hesap numarası bulunamadı", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Hesap numarası bulunamadı!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                 return; // Hata durumunda işlem yapmayı sonlandır
                             }
                         }
@@ -92,14 +92,14 @@ namespace FinansMerkezi
                 }
                 else
                 {
-                    MessageBox.Show("Geçersiz hesap numarası", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Geçersiz hesap numarası!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
                 //yatırılacak tutara sadece sayı girilsin istiyorum
                 if (!decimal.TryParse(lirasTxt.Text, out decimal liras))
                 {
-                    MessageBox.Show("Yatırılacak Tutar (TL) kısmına geçerli bir para miktarı girin!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Yatırılacak Tutar (TL) kısmına geçerli bir para miktarı girin!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
@@ -110,12 +110,12 @@ namespace FinansMerkezi
                 }
                 else
                 {
-                    MessageBox.Show("Geçerli bir süre girin", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Geçerli bir süre girin!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 if (!decimal.TryParse(interestTxt.Text, out decimal interest))
                 {
-                    MessageBox.Show("Geçerli bir faiz oranı girin!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Geçerli bir faiz oranı girin!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
