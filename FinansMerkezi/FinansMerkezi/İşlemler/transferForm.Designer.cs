@@ -153,9 +153,9 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(45, 331);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(207, 18);
+            this.label6.Size = new System.Drawing.Size(215, 18);
             this.label6.TabIndex = 20;
-            this.label6.Text = "Göndrilecek Hesap Numarası:";
+            this.label6.Text = "Gönderilecek Hesap Numarası:";
             // 
             // label5
             // 

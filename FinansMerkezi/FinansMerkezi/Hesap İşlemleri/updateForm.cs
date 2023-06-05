@@ -259,10 +259,13 @@ namespace FinansMerkezi
         {
             string newaccountNo = accnoTxt.Text;
             name = nameTxt.Text;
+            CapitalizeFirstLetters(name);
             dateOfBirth = dateTimePicker1.Value.Date;
             phoneno = phoneTxt.Text;
             address = addressTxt.Text;
+            CapitalizeFirstLetters(address);
             district = distTxt.Text;
+            CapitalizeFirstLetters(district);
             profile = GetProfileBytes();
             comboBox1.SelectedItem = state;
 
@@ -425,6 +428,12 @@ namespace FinansMerkezi
             {
                 MessageBox.Show("Lütfen silmek istediğiniz kullanıcıyı seçin.", "Kullanıcı Silme", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+        private string CapitalizeFirstLetters(string text)
+        {
+            TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo;
+            string result = textInfo.ToTitleCase(text);
+            return result;
         }
     }
 }

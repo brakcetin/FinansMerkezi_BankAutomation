@@ -182,7 +182,7 @@ namespace FinansMerkezi
                                 int rowsAffected = command.ExecuteNonQuery();
                                 if (rowsAffected > 0)
                                 {
-                                    MessageBox.Show("Vadesiz Mevduat formunuz başarıyla tamamlandı.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    MessageBox.Show("Vadeli Mevduat formunuz başarıyla tamamlandı.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     ClearFormFields();
                                 }
                                 else
