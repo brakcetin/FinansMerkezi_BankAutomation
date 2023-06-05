@@ -64,7 +64,7 @@
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(123, 46);
             this.saveBtn.TabIndex = 5;
-            this.saveBtn.Text = "Save";
+            this.saveBtn.Text = "Kaydet";
             this.saveBtn.UseVisualStyleBackColor = true;
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 

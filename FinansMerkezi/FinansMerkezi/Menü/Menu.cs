@@ -84,8 +84,6 @@ namespace FinansMerkezi
         private void çıkışYapToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
-            admin_login loginForm = new admin_login();
-            loginForm.Show();
         }
 
         private void şifreDeğiştirToolStripMenuItem_Click(object sender, EventArgs e)

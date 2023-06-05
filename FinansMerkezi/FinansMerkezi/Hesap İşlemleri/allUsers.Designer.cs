@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(allUsers));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             this.Account_No = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateofBirth = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,7 +39,6 @@
             this.State = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Balance = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,10 +61,20 @@
             this.dataGridView1.Size = new System.Drawing.Size(870, 363);
             this.dataGridView1.TabIndex = 0;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(347, 63);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(203, 31);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Müşteri Listesi";
+            // 
             // Account_No
             // 
             this.Account_No.DataPropertyName = "Account_No";
-            this.Account_No.HeaderText = "Müşteri Numarası";
+            this.Account_No.HeaderText = "Hesap Numarası";
             this.Account_No.MinimumWidth = 6;
             this.Account_No.Name = "Account_No";
             this.Account_No.Width = 125;
@@ -124,16 +134,6 @@
             this.Date.MinimumWidth = 6;
             this.Date.Name = "Date";
             this.Date.Width = 125;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(347, 63);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(203, 31);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Müşteri Listesi";
             // 
             // allUsers
             // 
