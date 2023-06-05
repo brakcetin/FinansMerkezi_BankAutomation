@@ -13,11 +13,13 @@ namespace FinansMerkezi
 {
     public partial class fdForm : Form
     {
+        private Informations infos;
         public fdForm()
         {
             InitializeComponent();
             loaddate();
             loadmode();
+            infos = new Informations();
         }
         private void loaddate()
         {
@@ -76,16 +78,29 @@ namespace FinansMerkezi
                         }
 
                         // Hesap numarasını kullanarak kaydın var olup olmadığını kontrol edin
-                        string checkAccountQuery = "SELECT COUNT(*) FROM useraccount WHERE Account_No = @accountNo";
+                        string checkAccountQuery = "SELECT Balance FROM useraccount WHERE Account_No = @accountNo";
                         using (MySqlCommand checkAccountCommand = new MySqlCommand(checkAccountQuery, connection))
                         {
                             checkAccountCommand.Parameters.AddWithValue("@accountNo", accno);
-                            decimal accountCount = Convert.ToDecimal(checkAccountCommand.ExecuteScalar());
-
-                            if (accountCount == 0)
+                            try
                             {
-                                MessageBox.Show("Hesap numarası bulunamadı!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                return; // Hata durumunda işlem yapmayı sonlandır
+                                using (MySqlDataReader reader = checkAccountCommand.ExecuteReader())
+                                {
+                                    if (reader.Read())
+                                    {
+                                        infos.Balance = (decimal)reader["Balance"];
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Hesap numaranız bulunamadı!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        return;
+                                    }
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Hata: " + ex.GetType().Name + Environment.NewLine + "Hata Detayı: " + ex.Message, "Sorgu Hatası!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
                             }
                         }
                     }
@@ -102,86 +117,95 @@ namespace FinansMerkezi
                     MessageBox.Show("Yatırılacak Tutar (TL) kısmına geçerli bir para miktarı girin!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-
-                //Süre (gün) yerine girilen değerin hem boş olmadığını hem de sayı girilip girilmediğini kontrol eder
-                if (int.TryParse(periodInput, out int period))
+                if (infos.Balance>=liras)
                 {
-                    maturity_date = (DateTime.UtcNow.AddDays(Convert.ToInt32(periodTxt.Text))).ToString("dd / MM / yyyy");
-                }
-                else
-                {
-                    MessageBox.Show("Geçerli bir süre girin!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-                if (!decimal.TryParse(interestTxt.Text, out decimal interest))
-                {
-                    MessageBox.Show("Geçerli bir faiz oranı girin!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                decimal maturity_amount = ((liras * period * interest) /
-                (100 * 12 * 30)) + (liras);
-                //100(yüzde), 12(ay sayısı), 30(gün sayısı)
-                using (MySqlConnection connection = DataBaseHelper.GetConnection())
-                {
-                    if (connection.State != ConnectionState.Open)
+                    //Süre (gün) yerine girilen değerin hem boş olmadığını hem de sayı girilip girilmediğini kontrol eder
+                    if (int.TryParse(periodInput, out int period))
                     {
-                        connection.Open();
+                        maturity_date = (DateTime.UtcNow.AddDays(Convert.ToInt32(periodTxt.Text))).ToString("dd / MM / yyyy");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Geçerli bir süre girin!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    if (!decimal.TryParse(interestTxt.Text, out decimal interest))
+                    {
+                        MessageBox.Show("Geçerli bir faiz oranı girin!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
                     }
 
-                    //veri setindeki useraccount tablosunda bulunan kullanıcıların bakiyelerini günceller
-                    string query1 = "SELECT Balance FROM useraccount WHERE Account_No = @senderAccountNo";
-                    using (MySqlCommand senderBalanceCommand = new MySqlCommand(query1, connection))
+                    decimal maturity_amount = ((liras * period * interest) /
+                    (100 * 12 * 30)) + (liras);
+                    //100(yüzde), 12(ay sayısı), 30(gün sayısı)
+                    using (MySqlConnection connection = DataBaseHelper.GetConnection())
                     {
-                        senderBalanceCommand.Parameters.AddWithValue("@senderAccountNo", accno);
-                        senderCurrentBalance = (decimal)senderBalanceCommand.ExecuteScalar();
-                        senderNewBalance = senderCurrentBalance - liras;
-
-                        // Gönderen kişinin Balance değerini günceller
-                        string updateSenderBalanceQuery = "UPDATE useraccount SET Balance = @senderNewBalance WHERE Account_No = @senderAccountNo";
-                        using (MySqlCommand updateSenderBalanceCommand = new MySqlCommand(updateSenderBalanceQuery, connection))
+                        if (connection.State != ConnectionState.Open)
                         {
-                            updateSenderBalanceCommand.Parameters.AddWithValue("@senderNewBalance", senderNewBalance);
-                            updateSenderBalanceCommand.Parameters.AddWithValue("@senderAccountNo", accno);
-                            updateSenderBalanceCommand.ExecuteNonQuery();
+                            connection.Open();
                         }
-                    }
-                    //veri setindeki fixed_deposit isimli tabloya gerekli bilgileri girer
-                    string query = "INSERT INTO fixed_deposit (Account_No, Mode, Liras, Period, Interest_rate, Maturity_date, Maturity_Amount, Start_Date) " +
-                        "VALUES (@accountNo, @Mode, @Liras,@Period, @Interest_rate, @Maturity_date, @Maturity_Amount, @Start_Date)";
-                    using (MySqlCommand command = new MySqlCommand(query, connection))
-                    {
-                        command.Parameters.AddWithValue("@accountNo", accno);
-                        command.Parameters.AddWithValue("@Mode", mode);
-                        command.Parameters.AddWithValue("@Liras", liras);
-                        command.Parameters.AddWithValue("@Period", period);
-                        command.Parameters.AddWithValue("@Interest_rate", interest);
-                        command.Parameters.AddWithValue("@Maturity_date", maturity_date);
-                        command.Parameters.AddWithValue("@Maturity_Amount", maturity_amount);
-                        command.Parameters.AddWithValue("@Start_Date", start_date);
 
-                        try     //yapılan işlem başarılı mı değil mi ona göre uyarı verir
+                        //veri setindeki useraccount tablosunda bulunan kullanıcıların bakiyelerini günceller
+                        string query1 = "SELECT Balance FROM useraccount WHERE Account_No = @senderAccountNo";
+                        using (MySqlCommand senderBalanceCommand = new MySqlCommand(query1, connection))
                         {
-                            // Sorguyu çalıştırın
-                            int rowsAffected = command.ExecuteNonQuery();
-                            if (rowsAffected > 0)
+                            senderBalanceCommand.Parameters.AddWithValue("@senderAccountNo", accno);
+                            senderCurrentBalance = (decimal)senderBalanceCommand.ExecuteScalar();
+                            senderNewBalance = senderCurrentBalance - liras;
+
+                            // Gönderen kişinin Balance değerini günceller
+                            string updateSenderBalanceQuery = "UPDATE useraccount SET Balance = @senderNewBalance WHERE Account_No = @senderAccountNo";
+                            using (MySqlCommand updateSenderBalanceCommand = new MySqlCommand(updateSenderBalanceQuery, connection))
                             {
-                                MessageBox.Show("Vadesiz Mevduat formunuz başarıyla tamamlandı.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                ClearFormFields();
+                                updateSenderBalanceCommand.Parameters.AddWithValue("@senderNewBalance", senderNewBalance);
+                                updateSenderBalanceCommand.Parameters.AddWithValue("@senderAccountNo", accno);
+                                updateSenderBalanceCommand.ExecuteNonQuery();
                             }
-                            else
+                        }
+                        //veri setindeki fixed_deposit isimli tabloya gerekli bilgileri girer
+                        string query = "INSERT INTO fixed_deposit (Account_No, Mode, Liras, Period, Interest_rate, Maturity_date, Maturity_Amount, Start_Date) " +
+                            "VALUES (@accountNo, @Mode, @Liras,@Period, @Interest_rate, @Maturity_date, @Maturity_Amount, @Start_Date)";
+                        using (MySqlCommand command = new MySqlCommand(query, connection))
+                        {
+                            command.Parameters.AddWithValue("@accountNo", accno);
+                            command.Parameters.AddWithValue("@Mode", mode);
+                            command.Parameters.AddWithValue("@Liras", liras);
+                            command.Parameters.AddWithValue("@Period", period);
+                            command.Parameters.AddWithValue("@Interest_rate", interest);
+                            command.Parameters.AddWithValue("@Maturity_date", maturity_date);
+                            command.Parameters.AddWithValue("@Maturity_Amount", maturity_amount);
+                            command.Parameters.AddWithValue("@Start_Date", start_date);
+
+                            try     //yapılan işlem başarılı mı değil mi ona göre uyarı verir
                             {
-                                MessageBox.Show("İşlem gerçekleştirilemedi.", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                // Sorguyu çalıştırın
+                                int rowsAffected = command.ExecuteNonQuery();
+                                if (rowsAffected > 0)
+                                {
+                                    MessageBox.Show("Vadesiz Mevduat formunuz başarıyla tamamlandı.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    ClearFormFields();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("İşlem gerçekleştirilemedi.", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    return;
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Hata: " + ex.GetType().Name + Environment.NewLine + "Hata Detayı: " + ex.Message, "Sorgu Hatası!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 return;
                             }
                         }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("Hata: " + ex.GetType().Name + Environment.NewLine + "Hata Detayı: " + ex.Message, "Sorgu Hatası!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return;
-                        }
                     }
                 }
+                else
+                {
+                    MessageBox.Show("Yetersiz bakiye!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                
             }
         }
         private void ClearFormFields()
